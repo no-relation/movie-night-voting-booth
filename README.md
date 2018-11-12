@@ -7,13 +7,14 @@ users --< votes >-- movies
 
 MVP: 
 ~~1. User will be able to submit as many movies as they wish.~~
-  * movies return user who submitted it
+  ~~* movies return user who submitted it~~
 ~~2. User will be able to up- or downvote a movie~~
 ~~3. votes will be tallied~~
 ~~4. List of movies returned, descending order of votes~~
 ~~5. can vote from movie show page (Eddie)~~
 
 Stretch goals:
+~~* Movie knows which user submitted it~~
 * Created movies start with an upvote (Eddie)
 * one vote per user per movie (Alex)
 * votes are secret until list is returned

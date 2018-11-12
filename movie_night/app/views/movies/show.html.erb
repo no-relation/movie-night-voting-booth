@@ -5,6 +5,8 @@
 </div>
 <% end %>
 <br>
+<h4>submitted by <%=@movie.submitter.name %> </h4>
+<br>
 <%= form_for @vote do | form | %>
     <%= form.hidden_field :movie_id, value: @movie.id%>
 

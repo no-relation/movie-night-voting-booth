@@ -1,6 +1,10 @@
 class MoviesController < ApplicationController
     before_action :define_current_movie
     
+    def new
+        @users = User.all
+    end
+
     def create
         Movie.create(movie_params)
         
@@ -37,6 +41,6 @@ class MoviesController < ApplicationController
     end
     
     def movie_params
-        params.require(:movie).permit(:title, :url)
+        params.require(:movie).permit(:title, :url, :submitter_id)
     end
 end

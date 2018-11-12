@@ -5,5 +5,8 @@
     <%= f.text_field :title %><br/>
     <%= f.label "Url" %><br/>
     <%= f.text_field :url %><br/>
+    <%= f.label "User: "%>
+    <%= f.collection_select :submitter_id, @users, :id, :name %>
+    <br>
     <%= f.submit%>
 <% end %>

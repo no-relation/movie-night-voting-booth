@@ -1,5 +1,7 @@
 <h1><%= @movie.title %> </h1>
-<% if @movie.url %>
-    <%= link_to 'IMDB', @movie.url %>
+<% if @movie.url != nil %>
+<div>
+    <%= link_to 'IMDB', @movie.url  %>
+</div>
 <% end %>
 

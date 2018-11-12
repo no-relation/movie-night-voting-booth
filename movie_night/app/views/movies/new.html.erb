@@ -1,0 +1,9 @@
+<h1>Add a Movie</h1>
+
+<%= form_for @movie do |f| %>
+    <%= f.label "Title" %><br/>
+    <%= f.text_field :title %><br/>
+    <%= f.label "Url" %><br/>
+    <%= f.text_field :url %><br/>
+    <%= f.submit%>
+<% end %>

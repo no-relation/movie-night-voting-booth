@@ -1,7 +1,8 @@
 <h1>Movies</h1>
-
+<%= link_to "Tally votes?", tally_votes_path %>
 <ol>
     <% @movies.each do |movie|%>
         <li><%= link_to movie.title, movie %> </li>
     <% end %>
 </ol>
+

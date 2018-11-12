@@ -1,5 +1,6 @@
 class VotesController < ApplicationController
     before_action :define_current_vote
+    before_create :prevent_duplicate 
     
     def new
         @users = User.all
@@ -28,6 +29,10 @@ class VotesController < ApplicationController
         @vote.destroy
         redirect_to votes_path
     end
+
+
+
+    private
     
     def define_current_vote
         if params[:id]
@@ -40,4 +45,7 @@ class VotesController < ApplicationController
     def vote_params
         params.require(:vote).permit(:up, :user_id, :movie_id)
     end
+
+
+    
 end

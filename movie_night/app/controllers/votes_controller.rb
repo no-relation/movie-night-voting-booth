@@ -6,6 +6,10 @@ class VotesController < ApplicationController
         @movies = Movie.all
     end
 
+    def tally
+        @movies = Movie.sorted_by_vote
+    end
+
     def create
         Vote.create(vote_params)
         redirect_to movies_path

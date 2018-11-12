@@ -23,6 +23,8 @@ class MoviesController < ApplicationController
         @movie.destroy
         redirect_to movies_path
     end
+
+    private
     
     def define_current_movie
         if params[:id]

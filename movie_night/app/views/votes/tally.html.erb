@@ -1,0 +1,7 @@
+<h1>Voting Results</h1>
+
+<ol>
+<% @movies.each do |m| %>
+    <li><%= link_to m.title, m %> Votes: <%= m.tally %></li>
+<% end %>
+</ol>

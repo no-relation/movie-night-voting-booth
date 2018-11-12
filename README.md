@@ -13,7 +13,7 @@ MVP:
 5. can vote from movie show page (Eddie)
 
 Stretch goals:
-1. one vote per user per movie (Alex)
+~~1. one vote per user per movie (Alex)~~
 2. votes are secret until list is returned
 3. movies aren't repeated: if another user submits a movie that's already on the list, it's an upvote for the existing movie
 4. have an admin or superuser, one who decides when the votes are tallied and can pick limitations, delete movie suggestions, etc.

@@ -1,6 +1,7 @@
 class Movie < ApplicationRecord
     has_many :votes
     has_many :users, through: :votes
+    belongs_to :submitter, class_name: "User"
     accepts_nested_attributes_for :votes
 
     def tally 

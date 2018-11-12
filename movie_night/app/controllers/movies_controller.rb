@@ -6,8 +6,8 @@ class MoviesController < ApplicationController
     end
 
     def create
-        Movie.create(movie_params)
-        
+        movie = Movie.create(movie_params)
+        Vote.create(up: true, user_id: params[:movie][:submitter_id], movie_id: movie.id)
         redirect_to movies_path
     end
     

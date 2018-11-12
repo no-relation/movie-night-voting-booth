@@ -15,8 +15,8 @@ MVP:
 
 Stretch goals:
 ~~* Movie knows which user submitted it~~
-* Created movies start with an upvote (Eddie)
-* one vote per user per movie (Alex)
+~~* Created movies start with an upvote (Eddie)~~
+~~* one vote per user per movie (Alex)~~
 * votes are secret until list is returned
 * movies aren't repeated: if another user submits a movie that's already on the list, it's an upvote for the existing movie 
 * have an admin or superuser, one who decides when the votes are tallied and can pick limitations, delete movie suggestions, etc.

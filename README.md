@@ -6,7 +6,7 @@ users --< votes >-- movies
 
 MVP: 
 1. User will be able to submit as many movies as they wish.
-..* movies return user who submitted it
+  * movies return user who submitted it
 2. User will be able to up- or downvote a movie
 3. votes will be tallied
 4. List of movies returned, descending order of votes

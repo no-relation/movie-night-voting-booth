@@ -10,7 +10,7 @@ MVP:
 ~~2. User will be able to up- or downvote a movie~~
 ~~3. votes will be tallied~~
 ~~4. List of movies returned, descending order of votes~~
-5. can vote from movie show page (Eddie)
+~~5. can vote from movie show page (Eddie)~~
 
 Stretch goals:
 1. one vote per user per movie (Alex)

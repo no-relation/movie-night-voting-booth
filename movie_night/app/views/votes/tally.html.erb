@@ -2,6 +2,8 @@
 
 <ol>
 <% @movies.each do |m| %>
-    <li><%= link_to m.title, m %> Votes: <%= m.tally %></li>
+    <li><%= link_to m.title, m %> Vote total: <%= m.tally %></li>
 <% end %>
 </ol>
+
+<%= link_to 'Return to Movies page', movies_path %>

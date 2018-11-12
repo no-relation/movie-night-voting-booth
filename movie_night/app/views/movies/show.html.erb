@@ -6,6 +6,8 @@
 <% end %>
 <br>
 <%= form_for @vote do | form | %>
+    <%= form.hidden_field :movie_id, value: @movie.id%>
+
     <%= form.label "User: "%>
     <%= form.collection_select :user_id, @users, :id, :name %>
     <br>

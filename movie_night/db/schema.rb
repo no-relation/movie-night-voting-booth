@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 2018_11_12_192118) do
   end
 
   create_table "votes", force: :cascade do |t|
-    t.boolean "up_or_down"
+    t.boolean "up"
     t.integer "user_id"
     t.integer "movie_id"
     t.datetime "created_at", null: false

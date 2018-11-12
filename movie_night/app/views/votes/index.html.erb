@@ -1,0 +1,8 @@
+<h1>Votes</h1>
+<ol>
+<% @votes.each do |vote| %>
+    <li><%= vote.user.name %></li>
+    <li><%= vote.movie.title %> </li>
+    <li>Upvote: <%= vote.up %> </li>
+<% end %>
+</ol>

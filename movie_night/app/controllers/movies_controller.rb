@@ -9,6 +9,10 @@ class MoviesController < ApplicationController
     def index
         @movies = Movie.all
     end
+
+    def show
+        @vote = Vote.new
+    end
     
     def update
         @movie.update(movie_params)

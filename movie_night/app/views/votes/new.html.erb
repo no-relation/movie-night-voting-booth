@@ -1,0 +1,16 @@
+<h1>Vote for a movie </h1>
+
+<%= form_for @vote do | form |%>
+    <%= form.label "User: "%>
+    <%= form.collection_select :user_id, @users, :id, :name %>
+    <br>
+    <%= form.label "Movie: "%>
+    <%= form.collection_select :movie_id, @movies, :id, :title %>
+    <br>
+    <%= form.radio_button(:up, true)%>
+    <%= form.label 'Upvote' %>
+    <%= form.radio_button(:up, false) %>
+    <%= form.label 'Downvote'%>
+    <br>
+    <%= form.submit %>
+<% end %>

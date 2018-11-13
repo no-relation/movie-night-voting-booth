@@ -5,6 +5,16 @@ class MoviesController < ApplicationController
         @users = User.all
     end
 
+    def find
+
+    end
+
+    def search
+        # byebug
+        json = Movie.search(params[:q])
+        @results = json["results"].shift(5)
+    end
+
     def create
         movie = Movie.find_or_initialize_by(title: movie_params[:title]) do | new_movie | 
             new_movie.assign_attributes(movie_params)

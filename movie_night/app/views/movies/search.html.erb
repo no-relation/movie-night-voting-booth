@@ -1,0 +1,8 @@
+<h1>Did you mean...?</h1>
+    <ul>
+    <% @results.each do |movie| %>
+        <li><%= link_to "#{movie["title"]} (#{movie["release_date"][0, 4]})", "https://www.themoviedb.org/movie/#{movie["id"]}", target: :_blank %></li>
+    <% end %>
+    </ul>
+<br>
+<%= link_to 'Search again', find_movies_path %>

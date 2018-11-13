@@ -17,6 +17,4 @@ class Vote < ApplicationRecord
             true
         end
     end
-
-
 end

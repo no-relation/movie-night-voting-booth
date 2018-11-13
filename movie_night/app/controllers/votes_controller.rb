@@ -13,7 +13,7 @@ class VotesController < ApplicationController
 
     def create
         Vote.create(vote_params)
-        redirect_to movies_path
+        redirect_to movie_path(Vote.last.movie)
     end
     
     def index

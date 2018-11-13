@@ -4,4 +4,21 @@
     <%= link_to 'IMDB', @movie.url  %>
 </div>
 <% end %>
+<br>
+<h4>submitted by <%=@movie.submitter.name %> </h4>
+<br>
+<%= form_for @vote do | form | %>
+    <%= form.hidden_field :movie_id, value: @movie.id%>
 
+    <%= form.label "User: "%>
+    <%= form.collection_select :user_id, @users, :id, :name %>
+    <br>
+    <%= form.radio_button(:up, true)%>
+    <%= form.label 'Upvote' %>
+    <%= form.radio_button(:up, false) %>
+    <%= form.label 'Downvote'%>
+    <br>
+    <%= form.submit %>
+<% end %>
+<br>
+<%= link_to "Return to Movies page", movies_path %>

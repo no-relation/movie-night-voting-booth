@@ -1,16 +1,22 @@
 class MoviesController < ApplicationController
     before_action :define_current_movie
     
+    def new
+        @users = User.all
+    end
+
     def create
-        Movie.create(movie_params)
+        movie = Movie.create(movie_params)
+        Vote.create(up: true, user_id: params[:movie][:submitter_id], movie_id: movie.id)
         redirect_to movies_path
     end
     
     def index
         @movies = Movie.all
     end
-
+    
     def show
+        @users = User.all
         @vote = Vote.new
     end
     
@@ -35,6 +41,6 @@ class MoviesController < ApplicationController
     end
     
     def movie_params
-        params.require(:movie).permit(:title, :url)
+        params.require(:movie).permit(:title, :url, :submitter_id)
     end
 end

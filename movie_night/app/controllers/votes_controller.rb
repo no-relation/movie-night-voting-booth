@@ -13,6 +13,7 @@ class VotesController < ApplicationController
     def create
         Vote.create(vote_params)
         redirect_to movie_path(Vote.last.movie)
+        flash[:notice] = "Movie upvoted"
     end
     
     def index

@@ -12,5 +12,5 @@ Vote.destroy_all
 eddie = User.create(name: "Eddie")
 alex = User.create(name: "Alex")
 
-Movie.create(title: "Clue", url: "https://www.imdb.com/title/tt0088930/?ref_=fn_al_tt_1")
-Movie.create(title: "Monty Python's Holy Grail")
+Movie.create(title: "Clue", url: "https://www.imdb.com/title/tt0088930/?ref_=fn_al_tt_1", submitter_id: 2)
+Movie.create(title: "Monty Python's Holy Grail", url: "", submitter_id: 1)

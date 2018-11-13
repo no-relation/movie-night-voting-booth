@@ -10,16 +10,19 @@ class MoviesController < ApplicationController
             new_movie.assign_attributes(movie_params)
         end
 
-        # Why doesn't this if statement work? 
-        if movie.save
-            redirect_to movie_path(movie)
-            flash[:success] = "Movie added"
-        else            
+        # sets true if movie is new to the database
+        is_old = !!movie.id
+        movie.save
+
+        if is_old
             redirect_to movies_path
             flash[:notice] = "Movie upvoted"
+        else
+            redirect_to movie_path(movie)
+            flash[:success] = "Movie added"
         end
-
-        Vote.create(up: true, user_id: params[:movie][:submitter_id], movie_id: movie.id)
+        
+        Vote.create(up: true, user_id: params[:movie][:submitter_id], movie_id: @movie.id)
     end
     
     def index

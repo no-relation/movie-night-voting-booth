@@ -14,3 +14,6 @@ alex = User.create(name: "Alex")
 
 Movie.create(title: "Clue", url: "https://www.imdb.com/title/tt0088930/?ref_=fn_al_tt_1", submitter_id: 2)
 Movie.create(title: "Monty Python's Holy Grail", url: "", submitter_id: 1)
+
+Vote.create(user_id: 1, movie_id: 1, up: true)
+Vote.create(user_id: 2, movie_id: 1, up: true)

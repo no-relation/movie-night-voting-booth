@@ -6,9 +6,23 @@ class MoviesController < ApplicationController
     end
 
     def create
-        movie = Movie.create(movie_params)
-        Vote.create(up: true, user_id: params[:movie][:submitter_id], movie_id: movie.id)
-        redirect_to movies_path
+        movie = Movie.find_or_initialize_by(title: movie_params[:title]) do | new_movie | 
+            new_movie.assign_attributes(movie_params)
+        end
+
+        # sets true if movie is new to the database
+        is_old = !!movie.id
+        movie.save
+
+        if is_old
+            redirect_to movies_path
+            flash[:notice] = "Movie upvoted"
+        else
+            redirect_to movie_path(movie)
+            flash[:success] = "Movie added"
+        end
+        
+        Vote.create(up: true, user_id: params[:movie][:submitter_id], movie_id: @movie.id)
     end
     
     def index

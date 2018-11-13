@@ -3,5 +3,6 @@
 <%= form_for @user do |f| %>
     <%= f.label "Name" %><br/>
     <%= f.text_field :name %><br/>
+    <%= f.collection_select :role, User::ROLES, :to_s, :humanize %>
     <%= f.submit%>
 <% end %>

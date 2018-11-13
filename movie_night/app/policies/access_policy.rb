@@ -15,9 +15,21 @@ class AccessPolicy
     # The most important role should be at the top.
     # In this case an administrator.
     #
-    # role :admin, proc { |user| user.admin? } do
-    #   can :destroy, User
-    # end
+     role :admin, {is_admin: true} do
+       can :manage, User
+       can :destroy, Movie
+     end
+
+     role :user do 
+       can :create, Movie 
+       can :create, Vote 
+       can :read, Movie
+       can :read, Vote
+       can :destroy, Vote do |vote, user|
+         vote.user_id == user.id 
+       end 
+     end
+
 
     # More privileged role, applies to registered users.
     #

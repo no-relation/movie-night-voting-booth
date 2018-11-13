@@ -17,9 +17,9 @@ Stretch goals:
 ~~* Movie knows which user submitted it~~
 ~~* Created movies start with an upvote (Eddie)~~
 ~~* one vote per user per movie (Alex)~~
-* votes are secret until list is returned
-* movies aren't repeated: if another user submits a movie that's already on the list, it's an upvote for the existing movie 
-* have an admin or superuser, one who decides when the votes are tallied and can pick limitations, delete movie suggestions, etc.
+* movies aren't repeated: if another user submits a movie that's already on the list, it's an upvote for the existing movie (Eddie)
+* have an admin or superuser, one who decides when the votes are tallied and can pick limitations, delete movie suggestions, etc. (Alex) (google rails multi role users?)
 * limiting movie submissions by genre or MPAA rating or Rotten Tomatoes rating
 * implement API search 
+* votes are secret until list is returned
 * clean up: remove routes and methods we don't want in final product

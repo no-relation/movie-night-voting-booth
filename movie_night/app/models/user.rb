@@ -5,4 +5,6 @@ class User < ApplicationRecord
     has_secure_password
 
     ROLES = %w[user admin].freeze
+
+    
 end

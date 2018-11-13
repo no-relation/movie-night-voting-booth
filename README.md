@@ -23,5 +23,3 @@ Stretch goals:
 * implement API search 
 * votes are secret until list is returned
 * clean up: remove routes and methods we don't want in final product
-
-Eddie branch test

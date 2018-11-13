@@ -3,6 +3,13 @@
 <%= form_for @user do |f| %>
     <%= f.label "Name" %><br/>
     <%= f.text_field :name %><br/>
+
+    <%= f.label "Password" %><br/>
+    <%= f.password_field :password %><br/>
+
+    <%= f.label "Password Confirmation" %><br/>
+    <%= f.password_field :password_confirmation %><br/>
+    
     <%= f.collection_select :role, User::ROLES, :to_s, :humanize %>
     <%= f.submit%>
 <% end %>

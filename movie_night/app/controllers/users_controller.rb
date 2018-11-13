@@ -17,8 +17,14 @@ def update
 end
 
 def destroy
-    @user.destroy
-    redirect_to users_path
+    if @user == current_user
+        @user.destroy
+        session.clear
+        redirect_to users_path
+    else
+        flash[:error_message] = "You are not authorized to destroy #{@user.name}"
+        redirect_to @user
+    end
 end
 
 private
@@ -32,7 +38,7 @@ def define_current_user
 end
 
 def user_params
-    params.require(:user).permit(:name)
+    params.require(:user).permit(:name, :password, :password_confirmation, :role)
 end    
 
 end

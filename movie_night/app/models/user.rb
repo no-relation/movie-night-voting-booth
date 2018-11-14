@@ -6,5 +6,8 @@ class User < ApplicationRecord
 
     ROLES = %w[user admin].freeze
 
+    def is_admin
+        self.role == "admin"
+    end
     
 end

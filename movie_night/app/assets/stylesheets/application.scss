@@ -14,3 +14,15 @@
  *= require_self
  */
  @import "bootstrap";
+
+ .alert-error{
+   color:#856404;
+   background-color:#fff3cd;
+   border-color:#ffeeba
+  }
+  .alert-error hr{
+    border-top-color:#ffe8a1
+  }
+  .alert-error .alert-link{
+    color:#533f03
+  }

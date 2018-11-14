@@ -18,8 +18,8 @@ class MoviesController < ApplicationController
     end
 
     def create
-        byebug
-        movie[:title] = params[:title]
+        # byebug
+        # movie[:title] = params[:title]
         movie = Movie.find_or_initialize_by(title: movie_params[:title]) do | new_movie | 
             new_movie.assign_attributes(movie_params)
         end

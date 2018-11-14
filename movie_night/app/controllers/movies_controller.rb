@@ -14,7 +14,6 @@ class MoviesController < ApplicationController
     end
 
     def create
-        # byebug
         movie = Movie.find_or_initialize_by(title: api_params[:title]) do | new_movie | 
             new_movie.assign_attributes(api_params)
         end
@@ -64,10 +63,10 @@ class MoviesController < ApplicationController
     end
     
     def movie_params
-        params.require(:movie).permit(:title, :year, :submitter_id, :overview, :poster_path, :tmdb_id)
+        params.require(:movie).permit(:title, :year, :submitter_id, :overview, :poster_path, :tmdb_id, :id)
     end
 
     def api_params
-        params.permit(:title, :year, :submitter_id, :overview, :poster_path, :tmdb_id)
+        params.permit(:title, :year, :submitter_id, :overview, :poster_path, :tmdb_id, :id)
     end
 end

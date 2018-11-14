@@ -21,6 +21,9 @@ def destroy
         @user.destroy
         session.clear
         redirect_to users_path
+    elsif authorize! :destroy, @user
+        @user.destroy
+        redirect_to users_path
     else
         flash[:error_message] = "You are not authorized to destroy #{@user.name}"
         redirect_to @user

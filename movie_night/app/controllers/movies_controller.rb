@@ -17,7 +17,6 @@ class MoviesController < ApplicationController
     def create
         inescapable = eval(params[:movie])
         inescapable[:submitter_id] = current_user.id
-        #byebug
         movie = Movie.find_or_initialize_by(title: inescapable[:title]) do | new_movie | 
             new_movie.assign_attributes(inescapable)
         end

@@ -10,8 +10,20 @@
   </head>
 
   <body>
-    <%#= @current_user %> 
-   <%#= render 'layouts/header' %>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="/movies">Movie Night!</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link" href="/movies">All Movies</a>
+      <a class="nav-item nav-link" href="/movies/find">Add Movie</a>
+      <a class="nav-item nav-link" href="/users">Users</a>
+      <a class="nav-item nav-link" href="/logout">Logout</a>
+    </div>
+  </div>
+</nav>
    <% if @current_user %>
    <h4><%= @current_user.name %> is the current user!</h4>
    <% end %>
@@ -21,7 +33,7 @@
       <% end %>
     <%= yield %>
     
-    <% if current_user %>
+    <% if @current_user %>
       <%= link_to 'Logout', logout_path %>
     <% end %>
     

@@ -1,2 +1,10 @@
 <h1><%= @user.name %></h1>
 
+<h3><%= @user.role %> </h3>
+
+<h4>Movies submitted:</h4>
+<ul>
+<% @user.movies.each do | movie | %>
+    <li><%= movie.title %></li>
+<% end %>
+</ul>

@@ -9,19 +9,19 @@
 <% if params[:q] && @results.size != 0 %>
     <h1>Did you mean...?</h1>
 
-    <% @results.each do |movie| %>
-        <%= form_tag '/movies', method: :POST %>
-            <%= submit_tag value="This one" %>
-            <%= label_tag :title, "#{movie["title"]} (#{movie["release_date"][0,4]})"%>
+    <%= form_tag '/movies', method: :POST %>
+        <% @results.each do |movie| %>
+            <%= radio_button_tag :movie, :title %> <%= label_tag :title, "#{movie["title"]} (#{movie["release_date"][0,4]})"%>
             <br>
             <%= hidden_field_tag :title, movie["title"] %>
             <%= hidden_field_tag :year, movie["release_date"][0,4] %>
             <%= hidden_field_tag :overview, movie["overview"] %>
             <%= hidden_field_tag :poster_path, movie["poster_path"] %> 
             <%= hidden_field_tag :tmdb_id, movie["tmdb_id"] %>
-            <%= hidden_field_tag :submitter_id, 1 %>
+            <%= hidden_field_tag :submitter_id, session[:current_user_id] %>
             <br>
     <% end %>
+    <%= submit_tag value="Select" %>
     
 <% elsif params[:q] && @results.size == 0 %>
     <% flash.now[:error] = 'No results found' %>

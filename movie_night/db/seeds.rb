@@ -9,11 +9,3 @@ User.destroy_all
 Movie.destroy_all
 Vote.destroy_all
 
-eddie = User.create(name: "Eddie")
-alex = User.create(name: "Alex")
-
-Movie.create(title: "Clue", submitter_id: 2)
-Movie.create(title: "Monty Python's Holy Grail", submitter_id: 1)
-
-Vote.create(user_id: 1, movie_id: 1, up: true)
-Vote.create(user_id: 2, movie_id: 1, up: true)

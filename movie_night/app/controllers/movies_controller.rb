@@ -8,7 +8,7 @@ class MoviesController < ApplicationController
     def find
         if params[:q]
             json = Movie.search(params[:q])
-            @results = json["results"].shift(4)
+            @results = json["results"].shift(5)
             # byebug
         end
     end
@@ -31,7 +31,7 @@ class MoviesController < ApplicationController
             flash[:success] = "Movie added"
         end
         
-        Vote.create(up: true, user_id: params[:submitter_id], movie_id: movie.id)
+        Vote.create(up: true, user_id: api_params[:submitter_id], movie_id: movie.id)
     end
     
     def index

@@ -15,5 +15,10 @@ class SessionsController < ApplicationController
     def define_error_message
         @error_message = flash[:error_message]
     end
+
+    def destroy
+        session.clear
+        redirect_to login_path
+    end
 end
 

@@ -18,5 +18,10 @@
         <div class="alert alert-<%= key %>"><%= value %></div>
       <% end %>
     <%= yield %>
+    
+    <% if current_user %>
+      <%= link_to 'Logout', logout_path %>
+    <% end %>
+    
   </body>
 </html>

@@ -20,7 +20,7 @@
       <a class="nav-item nav-link" href="/movies">All Movies</a>
       <a class="nav-item nav-link" href="/movies/find">Add Movie</a>
       <a class="nav-item nav-link" href="/users">Users</a>
-      <a class="nav-item nav-link" href="/logout">Logout</a>
+      <a class="nav-item nav-link float-right" href="/logout">Logout</a>
     </div>
   </div>
 </nav>
@@ -33,13 +33,9 @@
       <% end %>
     <%= yield %>
     
-<<<<<<< HEAD
-    <% if @current_user %>
-=======
     <br>
     <br>
     <% if @current_user.id %>
->>>>>>> dd19049d533f35876b7bf7eebdf86e2d933122a4
       <%= link_to 'Logout', logout_path %>
     <% else %>
       <%= link_to "Log In", login_path %>

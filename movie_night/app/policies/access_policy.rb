@@ -29,18 +29,6 @@ class AccessPolicy
          vote.user_id == user.id 
        end 
      end
-<<<<<<< HEAD
-=======
-     
-    #  The base role with no additional conditions.
-    #  Applies to every user.
-     
-    #  role :guest do
-    #   can :read, Session
-    #   can :read, User
-    #   can :read, Movie
-    #  end
->>>>>>> dd19049d533f35876b7bf7eebdf86e2d933122a4
 
 
     # More privileged role, applies to registered users.

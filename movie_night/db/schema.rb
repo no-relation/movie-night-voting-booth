@@ -14,10 +14,10 @@ ActiveRecord::Schema.define(version: 2018_11_13_194153) do
 
   create_table "movies", force: :cascade do |t|
     t.string "title"
-    t.integer "year"
+    t.string "year"
     t.string "overview"
     t.string "poster_path"
-    t.integer "tmdb_id"
+    t.string "tmdb_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "submitter_id"

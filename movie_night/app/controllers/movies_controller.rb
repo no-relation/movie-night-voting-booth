@@ -6,22 +6,17 @@ class MoviesController < ApplicationController
     end
 
     def find
-
-    end
-
-    def find
-        # byebug
         if params[:q]
             json = Movie.search(params[:q])
             @results = json["results"].shift(5)
+            # byebug
         end
     end
 
     def create
         # byebug
-        # movie[:title] = params[:title]
-        movie = Movie.find_or_initialize_by(title: movie_params[:title]) do | new_movie | 
-            new_movie.assign_attributes(movie_params)
+        movie = Movie.find_or_initialize_by(title: api_params[:title]) do | new_movie | 
+            new_movie.assign_attributes(api_params)
         end
 
         # sets true if movie is new to the database
@@ -30,13 +25,13 @@ class MoviesController < ApplicationController
 
         if is_old
             redirect_to movies_path
-            flash[:notice] = "Movie upvoted"
+            flash[:notice] = "Movie already added, upvoting instead"
         else
             redirect_to movie_path(movie)
             flash[:success] = "Movie added"
         end
         
-        Vote.create(up: true, user_id: params[:movie][:submitter_id], movie_id: @movie.id)
+        Vote.create(up: true, user_id: api_params[:submitter_id], movie_id: movie.id)
     end
     
     def index
@@ -70,5 +65,9 @@ class MoviesController < ApplicationController
     
     def movie_params
         params.require(:movie).permit(:title, :year, :submitter_id, :overview, :poster_path, :tmdb_id)
+    end
+
+    def api_params
+        params.permit(:title, :year, :submitter_id, :overview, :poster_path, :tmdb_id)
     end
 end

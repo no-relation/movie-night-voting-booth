@@ -5,6 +5,12 @@
 <h4>Movies submitted:</h4>
 <ul>
 <% @user.movies.each do | movie | %>
-    <li><%= movie.title %></li>
+    <li><%= link_to movie.title, movie %></li>
 <% end %>
 </ul>
+
+<div class='delete'>
+<% if can? :destroy, User%>
+<%= button_to "delete", {:controller => :users, :id => @user.id, :action => 'destroy' }, :method => :delete %>
+<% end %>
+</div>

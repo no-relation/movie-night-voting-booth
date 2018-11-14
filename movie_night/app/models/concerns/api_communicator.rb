@@ -1,7 +1,7 @@
 module ApiCommunicator
     require 'httparty'
 
-    config_query = 'https://api.themoviedb.org/3/configuration?api_key=de368b3f60ee91a81d25727a7439ca26'
+    @config_query = "https://api.themoviedb.org/3/configuration?api_key=de368b3f60ee91a81d25727a7439ca26"
 
     def url_slug(query)
         query.downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '')
@@ -22,20 +22,11 @@ module ApiCommunicator
         params[:overview] = json_object["overview"]
         params[:poster_path] = json_object["poster_path"]
         params[:tmdb_id] = json_object["id"]
-        
-
-            #     <%= hidden_field_tag :title, movie["title"] %>
-            # <%= hidden_field_tag :year, movie["release_date"][0,4] %>
-            # <%= hidden_field_tag :overview, movie["overview"] %>
-            # <%= hidden_field_tag :poster_path, movie["poster_path"] %> 
-            # <%= hidden_field_tag :tmdb_id, movie["tmdb_id"] %>
-            # <%= hidden_field_tag :submitter_id, session[:current_user_id] %>
         params
     end
 
-
     def config
-        HTTParty.get(config_query).parsed_response
+        HTTParty.get(@config_query).parsed_response
     end
 
 end

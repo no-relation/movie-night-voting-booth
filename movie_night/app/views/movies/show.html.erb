@@ -1,16 +1,32 @@
-<h1><%= @movie.title %> </h1>
+<h1><%= @movie.title %> (<%= @movie.year %>) </h1>
+<%= form_for @vote do | form | %>
+    <%= form.hidden_field :movie_id, value: @movie.id%>
+    <%= form.hidden_field :user_id, value: @current_user.id%>
+
+    <%= form.radio_button(:up, true)%>
+    <%= form.label 'Upvote' %>
+    <%= form.radio_button(:up, false) %>
+    <%= form.label 'Downvote'%>
+    <br>
+    <%= form.submit value="Vote"%>
+<% end %>
+<br>
+<%= image_tag "#{@movie.poster_image}" %>
 <div>
-    <%= link_to 'themovieDB link', '/' %>
+    <%= link_to 'themovieDB link', "https://www.themoviedb.org/movie/#{@movie.tmdb_id}", target: '_blank' %>
 </div>
 <br>
+<% if @movie.submitter %>
+    <h4>submitted by <%= link_to @movie.submitter.name, @movie.submitter %> </h4>
+<% end %>
 
-<h4>submitted by <%= link_to @movie.submitter.name, @movie.submitter %> </h4>
 <div class='delete'>
 <% if can? :destroy, Movie%>
 <%= button_to "delete", {:controller => :movies, :id => @movie.id, :action => 'destroy' }, :method => :delete %>
 <% end %>
 </div>
 
+<<<<<<< HEAD
 <br>
 <%= form_for(@vote) do | form | %>
     <%= form.hidden_field :movie_id, value: @movie.id%>
@@ -25,5 +41,9 @@
     <br>
     <%= form.submit "Vote!", class: "btn btn-primary" %>
 <% end %>
+=======
+<h3>Overview:</h3>
+<%= @movie.overview %>
+>>>>>>> dd19049d533f35876b7bf7eebdf86e2d933122a4
 <br>
 <%= link_to "Return to Movies page", movies_path %>

@@ -5,7 +5,21 @@ class MoviesController < ApplicationController
         @users = User.all
     end
 
+    def find
+
+    end
+
+    def find
+        # byebug
+        if params[:q]
+            json = Movie.search(params[:q])
+            @results = json["results"].shift(5)
+        end
+    end
+
     def create
+        # byebug
+        # movie[:title] = params[:title]
         movie = Movie.find_or_initialize_by(title: movie_params[:title]) do | new_movie | 
             new_movie.assign_attributes(movie_params)
         end
@@ -55,6 +69,6 @@ class MoviesController < ApplicationController
     end
     
     def movie_params
-        params.require(:movie).permit(:title, :url, :submitter_id)
+        params.require(:movie).permit(:title, :year, :submitter_id, :overview, :poster_path, :tmdb_id)
     end
 end

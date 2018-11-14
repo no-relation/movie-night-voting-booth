@@ -1,6 +1,5 @@
 class VotesController < ApplicationController
     before_action :define_current_vote
-    # before_create :prevent_duplicate 
     
     def new
         @users = User.all

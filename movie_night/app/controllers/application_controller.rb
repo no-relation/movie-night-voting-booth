@@ -11,7 +11,6 @@ class ApplicationController < ActionController::Base
       else 
         @current_user = User.new
       end
-      #byebug
     end
 
     def define_error_message

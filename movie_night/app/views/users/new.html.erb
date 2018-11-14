@@ -1,5 +1,6 @@
-<h1>Create a User</h1>
-
+<div class="card">
+<h2 class="card-header">Create a User</h1>
+<div class="card-body">
 <%= form_for @user do |f| %>
     <%= f.label "Name" %><br/>
     <%= f.text_field :name %><br/>
@@ -11,5 +12,7 @@
     <%= f.password_field :password_confirmation %><br/>
     
     <%= f.collection_select :role, User::ROLES, :to_s, :humanize %>
-    <%= f.submit%>
+    <%= f.submit "Create User", class: "btn btn-primary" %>
 <% end %>
+</div>
+</div>

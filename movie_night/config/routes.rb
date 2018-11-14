@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   resources :votes do 
     get 'tally', :on => :collection
   end
-  resources :movies 
+  resources :movies do
+    get 'find', :on => :collection
+  end
   resources :users
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'

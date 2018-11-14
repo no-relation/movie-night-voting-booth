@@ -1,9 +1,7 @@
 <h1><%= @movie.title %> </h1>
-<% if @movie.url.length != 0 %>
 <div>
-    <%= link_to 'IMDB', @movie.url  %>
+    <%= link_to 'themovieDB link', '/' %>
 </div>
-<% end %>
 <br>
 <h4>submitted by <%=@movie.submitter.name %> </h4>
 <br>

@@ -11,8 +11,8 @@
 
     <% @results.each do |movie| %>
         <%= form_tag '/movies', method: :POST %>
-            <%= label_tag :title, "#{movie["title"]} (#{movie["release_date"][0,4]})"%>
             <%= submit_tag value="This one" %>
+            <%= label_tag :title, "#{movie["title"]} (#{movie["release_date"][0,4]})"%>
             <br>
             <%= hidden_field_tag :title, movie["title"] %>
             <%= hidden_field_tag :year, movie["release_date"][0,4] %>

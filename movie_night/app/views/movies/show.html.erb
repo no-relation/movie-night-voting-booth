@@ -16,12 +16,16 @@
     <%= link_to 'themovieDB link', "https://www.themoviedb.org/movie/#{@movie.tmdb_id}", target: '_blank' %>
 </div>
 <br>
-<h4>submitted by <%= link_to @movie.submitter.name, @movie.submitter %> </h4>
+<% if @movie.submitter %>
+    <h4>submitted by <%= link_to @movie.submitter.name, @movie.submitter %> </h4>
+<% end %>
+
 <div class='delete'>
 <% if can? :destroy, Movie%>
 <%= button_to "delete", {:controller => :movies, :id => @movie.id, :action => 'destroy' }, :method => :delete %>
 <% end %>
 </div>
+
 <h3>Overview:</h3>
 <%= @movie.overview %>
 <br>

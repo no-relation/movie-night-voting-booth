@@ -3,6 +3,7 @@ class User < ApplicationRecord
     has_many :movies, through: :votes
     has_many :submitted_movies, :class_name => 'Movie', :foreign_key => 'submitter_id'
     has_secure_password
+    validates :name, uniqueness: true
 
     ROLES = %w[user admin].freeze
 

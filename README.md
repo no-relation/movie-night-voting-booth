@@ -24,6 +24,7 @@ Stretch goals:
 ~~* movies aren't repeated: if another user submits a movie that's already on the list, it's an upvote for the existing movie (Eddie)~~
 
 * have an admin or superuser, one who decides when the votes are tallied and can pick limitations, delete movie suggestions, etc. (Alex) (google rails multi role users?)
+* pull movie show page info from API call: title, release year, genres(?), movie poster, overview
 * Validations:
 
   * A user must have a unique name

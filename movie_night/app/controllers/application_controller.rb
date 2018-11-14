@@ -6,8 +6,12 @@ class ApplicationController < ActionController::Base
   before_action :define_error_message
 
     def current_user
+      if session[:current_user_id]
         @current_user = User.find(session[:current_user_id])
-
+      else 
+        @current_user = User.new
+      end
+      #byebug
     end
 
     def define_error_message

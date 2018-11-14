@@ -3,12 +3,14 @@
     <%= link_to 'themovieDB link', '/' %>
 </div>
 <br>
+
 <h4>submitted by <%= link_to @movie.submitter.name, @movie.submitter %> </h4>
 <div class='delete'>
 <% if can? :destroy, Movie%>
 <%= button_to "delete", {:controller => :movies, :id => @movie.id, :action => 'destroy' }, :method => :delete %>
 <% end %>
 </div>
+
 <br>
 <%= form_for @vote do | form | %>
     <%= form.hidden_field :movie_id, value: @movie.id%>

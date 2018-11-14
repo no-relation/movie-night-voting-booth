@@ -17,4 +17,5 @@ class Movie < ApplicationRecord
     def self.sorted_by_vote
         self.all.sort_by { |movie| movie.tally }.reverse
     end
+
 end

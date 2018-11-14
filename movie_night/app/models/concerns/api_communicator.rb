@@ -15,6 +15,25 @@ module ApiCommunicator
         HTTParty.get(tmdb_api_url(query)).parsed_response
     end
 
+    def json_to_params(json_object)
+        params = {}
+        params[:title] = json_object["title"]
+        params[:year] = json_object["release_date"][0,4]
+        params[:overview] = json_object["overview"]
+        params[:poster_path] = json_object["poster_path"]
+        params[:tmdb_id] = json_object["id"]
+        
+
+            #     <%= hidden_field_tag :title, movie["title"] %>
+            # <%= hidden_field_tag :year, movie["release_date"][0,4] %>
+            # <%= hidden_field_tag :overview, movie["overview"] %>
+            # <%= hidden_field_tag :poster_path, movie["poster_path"] %> 
+            # <%= hidden_field_tag :tmdb_id, movie["tmdb_id"] %>
+            # <%= hidden_field_tag :submitter_id, session[:current_user_id] %>
+        params
+    end
+
+
     def config
         HTTParty.get(config_query).parsed_response
     end

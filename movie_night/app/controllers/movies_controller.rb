@@ -8,15 +8,17 @@ class MoviesController < ApplicationController
     def find
         if params[:q]
             json = Movie.search(params[:q])
-            @results = json["results"].shift(5)
-            # byebug
+            @results = json["results"].shift(5).map do | result |
+                Movie.json_to_params(result)
+            end
         end
     end
 
     def create
-        # byebug
-        movie = Movie.find_or_initialize_by(title: api_params[:title]) do | new_movie | 
-            new_movie.assign_attributes(api_params)
+        inescapable = eval(params[:movie])
+        inescapable[:submitter_id] = current_user.id
+        movie = Movie.find_or_initialize_by(title: inescapable[:title]) do | new_movie | 
+            new_movie.assign_attributes(inescapable)
         end
 
         # sets true if movie is new to the database
@@ -27,11 +29,11 @@ class MoviesController < ApplicationController
             redirect_to movies_path
             flash[:notice] = "Movie already added, upvoting instead"
         else
-            redirect_to movie_path(movie)
+            redirect_to movies_path
             flash[:success] = "Movie added"
         end
         
-        Vote.create(up: true, user_id: api_params[:submitter_id], movie_id: movie.id)
+        Vote.create(up: true, user_id: inescapable[:submitter_id], movie_id: movie.id)
     end
     
     def index

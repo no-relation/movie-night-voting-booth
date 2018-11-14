@@ -3,8 +3,14 @@ before_action :instance_user
 
 
 def create
-    User.create(user_params)
-    redirect_to login_path
+    @user = User.create(user_params)
+    if @user.valid?
+        @user.save
+        redirect_to login_path
+    else
+        flash[:error] = "That name has already been taken"
+        redirect_to new_user_path
+    end        
 end
 
 def index

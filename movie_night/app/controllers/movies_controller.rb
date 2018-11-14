@@ -66,10 +66,10 @@ class MoviesController < ApplicationController
     end
     
     def movie_params
-        params.require(:movie).permit(:title, :year, :submitter_id, :overview, :poster_path, :tmdb_id)
+        params.require(:movie).permit(:title, :year, :submitter_id, :overview, :poster_path, :tmdb_id, :id)
     end
 
     def api_params
-        params.permit(:title, :year, :submitter_id, :overview, :poster_path, :tmdb_id)
+        params.permit(:title, :year, :submitter_id, :overview, :poster_path, :tmdb_id, :id)
     end
 end

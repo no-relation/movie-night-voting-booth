@@ -1,10 +1,10 @@
 class UsersController < ApplicationController
-before_action :define_current_user
+before_action :instance_user
 
 
 def create
     User.create(user_params)
-    redirect_to users_path
+    redirect_to login_path
 end
 
 def index
@@ -29,7 +29,7 @@ end
 
 private
 
-def define_current_user
+def instance_user
     if params[:id]
         @user = User.find(params[:id])
     else

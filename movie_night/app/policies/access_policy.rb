@@ -18,6 +18,7 @@ class AccessPolicy
      role :admin, {is_admin: true} do
        can :manage, User
        can :destroy, Movie
+       can :destroy, Vote
      end
 
      role :user do 

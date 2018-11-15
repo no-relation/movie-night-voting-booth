@@ -19,13 +19,13 @@ class AccessPolicy
        can :manage, User
        can :destroy, Movie
        can :destroy, Vote
+       can :read, Vote
      end
 
      role :user do 
        can :create, Movie 
        can :create, Vote 
        can :read, Movie
-       can :read, Vote
        can :destroy, Vote do |vote, user|
          vote.user_id == user.id 
        end 

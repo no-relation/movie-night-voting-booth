@@ -41,6 +41,7 @@ class MoviesController < ApplicationController
     end
     
     def show
+        
         @users = User.all
         @vote = Vote.new
     end

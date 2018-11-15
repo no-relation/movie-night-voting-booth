@@ -1,13 +1,13 @@
 Rails.application.routes.draw do
+  match '/votes/destroy_all', to: 'votes#destroy_all', via: :delete
   resources :votes do 
     get 'tally', :on => :collection
   end 
-  match '/votes/destroy_all', to: 'votes#destroy_all', via: :delete
   
+  match '/movies/destroy_all', to: 'movies#destroy_all', via: :delete
   resources :movies do
     get 'find', :on => :collection
   end
-  match '/movies/destroy_all', to: 'movies#destroy_all', via: :delete
 
   resources :users
   get '/login', to: 'sessions#new'

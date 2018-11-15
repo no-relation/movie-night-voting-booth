@@ -19,6 +19,7 @@ class Movie < ApplicationRecord
     end
 
     def poster_image
+        
         config = HTTParty.get("https://api.themoviedb.org/3/configuration?api_key=de368b3f60ee91a81d25727a7439ca26").parsed_response
         images = config["images"]
         images["base_url"] + images["poster_sizes"][3] + self.poster_path

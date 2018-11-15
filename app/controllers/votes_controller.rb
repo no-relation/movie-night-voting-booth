@@ -51,7 +51,7 @@ class VotesController < ApplicationController
     private
     
     def define_current_vote
-        if params[:id].is_a?(Integer)
+        if params[:id]
             @vote = Vote.find(params[:id])
         else
             @vote = Vote.new

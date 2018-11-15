@@ -16,7 +16,6 @@
       <span class="navbar-toggler-icon"></span>
   </button>
   <div class="nav navbar-nav collapse navbar-collapse" id="navbarNavAltMarkup">
-   <!-- <div class="nav navbar-nav"> -->
       <a class="nav-item nav-link" href="/movies">All Movies</a>
       <a class="nav-item nav-link" href="/movies/find">Add Movie</a>
       <a class="nav-item nav-link" href="/users">Users</a>
@@ -27,11 +26,7 @@
         <li class="nav-item"><a class="nav-link" href="/logout">Logout</a>
       </ul>
     </div>
- <!-- </div> -->
 </nav>
-   <%# if @current_user %>
-   <h4><%#= @current_user.name %> is the current user!</h4>
-   <%# end %>
     <div class="container">
       <% flash.each do |key, value| %>
         <div class="alert alert-<%= key %>."><%= value %></div>

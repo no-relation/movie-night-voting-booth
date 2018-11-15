@@ -1,6 +1,10 @@
 <%= content_for :title, " - Movies"%>
 <h1>Movies</h1>
-<%= link_to "Tally votes?", tally_votes_path %>
+<% if can? :destroy, Movie%>
+    <%= link_to "Tally votes?", tally_votes_path, class:"btn btn-info" %>
+<% end %>
+<br/>
+<br/>
 <ol>
     <% @movies.each do |movie|%>
         <li>
@@ -14,4 +18,4 @@
     <% end %>
 </ol>
 <br>
-<%= link_to 'Add movie', find_movies_path %>
+<%= link_to 'Add movie', find_movies_path, class: "btn btn-primary"%>

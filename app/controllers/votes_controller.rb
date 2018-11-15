@@ -1,5 +1,6 @@
 class VotesController < ApplicationController
     before_action :define_current_vote
+    before_action :logged_in?
     
     def new
         @users = User.all

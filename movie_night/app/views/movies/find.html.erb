@@ -14,7 +14,7 @@
             <%= radio_button_tag :movie, movie %> <%= label_tag :title, "#{movie[:title]} (#{movie[:year]})"%>
             <br>
     <% end %>
-    <%= submit_tag value="Select" %>
+    <%= submit_tag "Select", class: "btn btn-outline-success" %>
     
 <% elsif params[:q] && @results.size == 0 %>
     <% flash.now[:error] = 'No results found' %>

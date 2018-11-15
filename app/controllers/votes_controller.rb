@@ -11,6 +11,12 @@ class VotesController < ApplicationController
     end
 
     def create
+        if params[:commit] == "upvote"
+            params[:vote][:up] = true
+        elsif params[:commit] == "downvote"
+            params[:vote][:up] = false
+        end
+        
         @vote = Vote.new(vote_params)
         if @vote.valid?
             @vote.save

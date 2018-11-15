@@ -1,15 +1,17 @@
 <%= content_for :title, " - #{@movie.title}"%>
 <h1><%= @movie.title %> (<%= @movie.year %>) </h1>
+
 <%= form_for @vote do | form | %>
     <%= form.hidden_field :movie_id, value: @movie.id%>
     <%= form.hidden_field :user_id, value: @current_user.id%>
-
-    <%= form.radio_button(:up, true)%>
-    <%= form.label 'Upvote' %>
-    <%= form.radio_button(:up, false) %>
-    <%= form.label 'Downvote'%>
+    <%= form.submit value="upvote"%>
+    <%= form.submit value="downvote"%>
+    <%#= form.radio_button(:up, true)%>
+    <%#= form.label 'Upvote' %>
+    <%#= form.radio_button(:up, false) %>
+    <%#= form.label 'Downvote'%>
     <br>
-    <%= form.submit value="Vote", class: "btn btn-primary"%>
+    <%#= form.submit value="Vote", class: "btn btn-primary"%>
 <% end %>
 <br>
 <%= image_tag "#{@movie.poster_image}" %>

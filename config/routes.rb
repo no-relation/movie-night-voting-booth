@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
   match '/votes/destroy_all', to: 'votes#destroy_all', via: :delete
-  resources :votes do 
+  resources :votes, except: :index do 
     get 'tally', :on => :collection
   end 
   
   match '/movies/destroy_all', to: 'movies#destroy_all', via: :delete
-  resources :movies do
+  resources :movies, except: [:new, :update] do
     get 'find', :on => :collection
   end
 

@@ -2,9 +2,13 @@
 <%= link_to "Tally votes?", tally_votes_path %>
 <ol>
     <% @movies.each do |movie|%>
-        <li><%= link_to movie.title, movie %> 
+        <li>
         <% if can? :destroy, Movie%>
-        <%= button_to "delete", {:controller => :movies, :id => movie.id, :action => 'destroy' }, :method => :delete %></li>
+        <div class="btn-group">
+            <%= link_to "Delete", {:controller => :movies, :id => movie.id, :action => 'destroy' }, :method => :delete, class: "btn btn-danger btn-sm"%>
+        </div>
+        <%= link_to movie.title, movie %> 
+        </li>
         <% end %>
     <% end %>
 </ol>

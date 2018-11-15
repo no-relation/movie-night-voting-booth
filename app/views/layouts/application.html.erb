@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>MovieNight</title>
+    <title>MovieNight<%= yield(:title) %></title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -20,7 +20,7 @@
       <a class="nav-item nav-link" href="/movies/find">Add Movie</a>
       <a class="nav-item nav-link" href="/users">Users</a>
       <ul class="nav navbar-nav ml-auto">
-        <% if @current_user %>
+        <% if session[:current_user_id] %>
           <li class="nav-item"><a class="nav-link">Welcome, <%= @current_user.name %>!</a></li>
         <% end %>
         <li class="nav-item"><a class="nav-link" href="/logout">Logout</a>
@@ -29,7 +29,7 @@
 </nav>
     <div class="container">
       <% flash.each do |key, value| %>
-        <div class="alert alert-<%= key %>."><%= value %></div>
+        <div class="alert alert-<%= key %>"><%= value %></div>
       <% end %>
     <%= yield %>
     

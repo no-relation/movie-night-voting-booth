@@ -1,3 +1,4 @@
+<%= content_for :title, " - Movies"%>
 <h1>Movies</h1>
 <%= link_to "Tally votes?", tally_votes_path %>
 <ol>
@@ -7,9 +8,9 @@
         <div class="btn-group">
             <%= link_to "Delete", {:controller => :movies, :id => movie.id, :action => 'destroy' }, :method => :delete, class: "btn btn-danger btn-sm"%>
         </div>
+        <% end %>
         <%= link_to movie.title, movie %> 
         </li>
-        <% end %>
     <% end %>
 </ol>
 <br>

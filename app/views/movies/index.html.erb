@@ -7,9 +7,9 @@
         <div class="btn-group">
             <%= link_to "Delete", {:controller => :movies, :id => movie.id, :action => 'destroy' }, :method => :delete, class: "btn btn-danger btn-sm"%>
         </div>
+        <% end %>
         <%= link_to movie.title, movie %> 
         </li>
-        <% end %>
     <% end %>
 </ol>
 <br>

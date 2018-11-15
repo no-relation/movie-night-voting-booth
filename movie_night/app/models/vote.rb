@@ -15,13 +15,5 @@ class Vote < ApplicationRecord
             true 
         end
     end
-        #     if found_vote.up == self.up 
-        #         errors.add(:vote, "already voted!")
-        #         false
-        #     elsif found_vote.up != self.up
-                
-        #     end 
-        # else 
-        #     true
-        # end
+    
 end

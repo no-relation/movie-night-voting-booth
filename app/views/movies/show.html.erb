@@ -1,17 +1,12 @@
 <%= content_for :title, " - #{@movie.title}"%>
 <h1><%= @movie.title %> (<%= @movie.year %>) </h1>
 
-<%= form_for @vote do | form | %>
+<%= form_with model: @vote do | form | %>
     <%= form.hidden_field :movie_id, value: @movie.id%>
     <%= form.hidden_field :user_id, value: @current_user.id%>
-    <%= form.submit value="upvote"%>
-    <%= form.submit value="downvote"%>
-    <%#= form.radio_button(:up, true)%>
-    <%#= form.label 'Upvote' %>
-    <%#= form.radio_button(:up, false) %>
-    <%#= form.label 'Downvote'%>
+    <%= form.submit value="upvote", :type => :image,  :src => "http://icongal.com/gallery/image/89680/up_arrow.png" %>
+    <%= form.submit value="downvote", type: :image, src: "http://icongal.com/gallery/image/89668/down_arrow.png" %>
     <br>
-    <%#= form.submit value="Vote", class: "btn btn-primary"%>
 <% end %>
 <br>
 <%= image_tag "#{@movie.poster_image}" %>
@@ -25,7 +20,7 @@
 
 <div class='delete'>
 <% if can? :destroy, Movie%>
-<%= button_to "delete", {:controller => :movies, :id => @movie.id, :action => 'destroy' }, :method => :delete %>
+<%= button_to "delete", {:controller => :movies, :id => @movie.id, :action => 'destroy' }, :method => :delete, class: "btn btn-danger" %>
 <% end %>
 </div>
 

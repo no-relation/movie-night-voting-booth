@@ -1,0 +1,16 @@
+<h1>Voting Results</h1>
+
+<ol>
+<% @movies.each do |m| %>
+    <li><%= link_to m.title, m %> Vote total: <%= m.tally %></li>
+<% end %>
+</ol>
+
+<%= link_to 'Return to Movies page', movies_path %>
+<br>
+
+<% if can? :destroy, Vote %>
+<%= link_to 'Clear movie list', movies_destroy_all_path, method: :delete, data: {confirm: 'Are you sure?'} %>
+<br>
+<%= link_to 'Reset vote count', votes_destroy_all_path, method: :delete, data: {confirm: 'Are you sure?'} %>
+<% end %>

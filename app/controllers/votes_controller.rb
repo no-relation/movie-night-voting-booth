@@ -12,7 +12,6 @@ class VotesController < ApplicationController
     end
 
     def create
-        #byebug
         if params[:"commit"] == "upvote"
             params[:vote][:up] = true
         elsif params[:"commit"] == "downvote"

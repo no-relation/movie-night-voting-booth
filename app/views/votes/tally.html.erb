@@ -8,9 +8,9 @@
 
 <%= link_to 'Return to Movies page', movies_path %>
 <br>
-<%# DON'T KNOW WHY THIS WON'T WORK%>
+
 <% if can? :destroy, Vote %>
-<%= link_to 'Clear movie list', movies_destroy_all_path, method: :delete, confirm: 'Are you sure?' %>
+<%= link_to 'Clear movie list', movies_destroy_all_path, method: :delete, data: {confirm: 'Are you sure?'} %>
 <br>
-<%= link_to 'Reset vote count', votes_destroy_all_path, method: :delete, confirm: 'Are you sure?' %>
+<%= link_to 'Reset vote count', votes_destroy_all_path, method: :delete, data: {confirm: 'Are you sure?'} %>
 <% end %>

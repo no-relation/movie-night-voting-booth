@@ -1,3 +1,4 @@
+<%= content_for :title, " - #{@movie.title}"%>
 <h1><%= @movie.title %> (<%= @movie.year %>) </h1>
 <%= form_for @vote do | form | %>
     <%= form.hidden_field :movie_id, value: @movie.id%>

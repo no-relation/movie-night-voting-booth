@@ -20,7 +20,7 @@
       <a class="nav-item nav-link" href="/movies/find">Add Movie</a>
       <a class="nav-item nav-link" href="/users">Users</a>
       <ul class="nav navbar-nav ml-auto">
-        <% if @current_user %>
+        <% if session[:current_user_id] %>
           <li class="nav-item"><a class="nav-link">Welcome, <%= @current_user.name %>!</a></li>
         <% end %>
         <li class="nav-item"><a class="nav-link" href="/logout">Logout</a>

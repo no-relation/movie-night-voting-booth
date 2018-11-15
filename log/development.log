@@ -18772,3 +18772,1013 @@ Processing by MoviesController#find as HTML
 Completed 200 OK in 922ms (Views: 872.0ms | ActiveRecord: 1.7ms)
 
 
+Started GET "/movies" for 127.0.0.1 at 2018-11-15 10:00:08 -0600
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/flatironschool/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by MoviesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/movies/index.html.erb:4
+  Rendered movies/index.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 8950ms (Views: 8877.7ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2018-11-15 10:00:18 -0600
+Processing by MoviesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/movies/index.html.erb:4
+  Rendered movies/index.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 107ms (Views: 99.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/movies/find" for 127.0.0.1 at 2018-11-15 10:00:22 -0600
+Processing by MoviesController#find as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendering movies/find.html.erb within layouts/application
+  Rendered movies/find.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 65ms (Views: 55.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/movies/find?utf8=%E2%9C%93&q=star+wars&commit=Search" for 127.0.0.1 at 2018-11-15 10:00:25 -0600
+Processing by MoviesController#find as HTML
+  Parameters: {"utf8"=>"✓", "q"=>"star wars", "commit"=>"Search"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendering movies/find.html.erb within layouts/application
+  Rendered movies/find.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 357ms (Views: 45.9ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/movies" for 127.0.0.1 at 2018-11-15 10:00:29 -0600
+Processing by MoviesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wJyUVgwNusjxfr97KgP/WFMMiojRVBZZoKtuYPeSf7Pq5287jN0zWtWRbOBWZ1wPlqrQIWRnfnqs7l6IcYdN+w==", "movie"=>"{:title=>\"Star Wars\", :year=>\"1977\", :overview=>\"Princess Leia is captured and held hostage by the evil Imperial forces in their effort to take over the galactic Empire. Venturesome Luke Skywalker and dashing captain Han Solo team together with the loveable robot duo R2-D2 and C-3PO to rescue the beautiful princess and restore peace and justice in the Empire.\", :poster_path=>\"/btTdmkgIvOi0FFip1sPuZI2oQG6.jpg\", :tmdb_id=>11}", "commit"=>"Select"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."title" = ? LIMIT ?[0m  [["title", "Star Wars"], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/movies_controller.rb:26
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:26
+  [1m[36mMovie Create (2.0ms)[0m  [1m[32mINSERT INTO "movies" ("title", "year", "overview", "poster_path", "tmdb_id", "created_at", "updated_at", "submitter_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Star Wars"], ["year", "1977"], ["overview", "Princess Leia is captured and held hostage by the evil Imperial forces in their effort to take over the galactic Empire. Venturesome Luke Skywalker and dashing captain Han Solo team together with the loveable robot duo R2-D2 and C-3PO to rescue the beautiful princess and restore peace and justice in the Empire."], ["poster_path", "/btTdmkgIvOi0FFip1sPuZI2oQG6.jpg"], ["tmdb_id", "11"], ["created_at", "2018-11-15 16:00:29.360143"], ["updated_at", "2018-11-15 16:00:29.360143"], ["submitter_id", 9]]
+  ↳ app/controllers/movies_controller.rb:26
+  [1m[35m (5.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/movies_controller.rb:26
+Redirected to http://localhost:3000/movies
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/movies_controller.rb:36
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:36
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:36
+  [1m[36mVote Load (0.2ms)[0m  [1m[34mSELECT  "votes".* FROM "votes" WHERE "votes"."user_id" = ? AND "votes"."movie_id" = ? LIMIT ?[0m  [["user_id", 9], ["movie_id", 35], ["LIMIT", 1]]
+  ↳ app/models/vote.rb:8
+  [1m[36mVote Create (0.7ms)[0m  [1m[32mINSERT INTO "votes" ("up", "user_id", "movie_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["up", 1], ["user_id", 9], ["movie_id", 35], ["created_at", "2018-11-15 16:00:29.408377"], ["updated_at", "2018-11-15 16:00:29.408377"]]
+  ↳ app/controllers/movies_controller.rb:36
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/movies_controller.rb:36
+Completed 302 Found in 87ms (ActiveRecord: 13.5ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2018-11-15 10:00:29 -0600
+Processing by MoviesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/movies/index.html.erb:4
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered movies/index.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 104ms (Views: 98.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/movies/find" for 127.0.0.1 at 2018-11-15 10:00:34 -0600
+Processing by MoviesController#find as HTML
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendering movies/find.html.erb within layouts/application
+  Rendered movies/find.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 64ms (Views: 53.4ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/movies/find?utf8=%E2%9C%93&q=matrix&commit=Search" for 127.0.0.1 at 2018-11-15 10:00:38 -0600
+Processing by MoviesController#find as HTML
+  Parameters: {"utf8"=>"✓", "q"=>"matrix", "commit"=>"Search"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendering movies/find.html.erb within layouts/application
+  Rendered movies/find.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 247ms (Views: 52.4ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/movies" for 127.0.0.1 at 2018-11-15 10:00:42 -0600
+Processing by MoviesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ycKvD/PdvC5yYsgNSlt7Kotz+I5eZczgzF7aNjwpKBXjuVRicw01vFaNG5Y2P9h9TtWiJ+tWpMPAG+reujwaXQ==", "movie"=>"{:title=>\"The Matrix\", :year=>\"1999\", :overview=>\"Set in the 22nd century, The Matrix tells the story of a computer hacker who joins a group of underground insurgents fighting the vast and powerful computers who now rule the earth.\", :poster_path=>\"/hEpWvX6Bp79eLxY1kX5ZZJcme5U.jpg\", :tmdb_id=>603}", "commit"=>"Select"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."title" = ? LIMIT ?[0m  [["title", "The Matrix"], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:20
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/movies_controller.rb:26
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:26
+  [1m[36mMovie Create (1.0ms)[0m  [1m[32mINSERT INTO "movies" ("title", "year", "overview", "poster_path", "tmdb_id", "created_at", "updated_at", "submitter_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "The Matrix"], ["year", "1999"], ["overview", "Set in the 22nd century, The Matrix tells the story of a computer hacker who joins a group of underground insurgents fighting the vast and powerful computers who now rule the earth."], ["poster_path", "/hEpWvX6Bp79eLxY1kX5ZZJcme5U.jpg"], ["tmdb_id", "603"], ["created_at", "2018-11-15 16:00:42.663882"], ["updated_at", "2018-11-15 16:00:42.663882"], ["submitter_id", 9]]
+  ↳ app/controllers/movies_controller.rb:26
+  [1m[35m (2.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/movies_controller.rb:26
+Redirected to http://localhost:3000/movies
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/movies_controller.rb:36
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:36
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 36], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:36
+  [1m[36mVote Load (0.2ms)[0m  [1m[34mSELECT  "votes".* FROM "votes" WHERE "votes"."user_id" = ? AND "votes"."movie_id" = ? LIMIT ?[0m  [["user_id", 9], ["movie_id", 36], ["LIMIT", 1]]
+  ↳ app/models/vote.rb:8
+  [1m[36mVote Create (0.8ms)[0m  [1m[32mINSERT INTO "votes" ("up", "user_id", "movie_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["up", 1], ["user_id", 9], ["movie_id", 36], ["created_at", "2018-11-15 16:00:42.678215"], ["updated_at", "2018-11-15 16:00:42.678215"]]
+  ↳ app/controllers/movies_controller.rb:36
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/movies_controller.rb:36
+Completed 302 Found in 31ms (ActiveRecord: 8.7ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2018-11-15 10:00:42 -0600
+Processing by MoviesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/movies/index.html.erb:4
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered movies/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 77ms (Views: 65.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/movies/find" for 127.0.0.1 at 2018-11-15 10:00:45 -0600
+Processing by MoviesController#find as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendering movies/find.html.erb within layouts/application
+  Rendered movies/find.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 54ms (Views: 47.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/movies/find?utf8=%E2%9C%93&q=Casablanca&commit=Search" for 127.0.0.1 at 2018-11-15 10:00:50 -0600
+Processing by MoviesController#find as HTML
+  Parameters: {"utf8"=>"✓", "q"=>"Casablanca", "commit"=>"Search"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendering movies/find.html.erb within layouts/application
+  Rendered movies/find.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 431ms (Views: 46.2ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/movies" for 127.0.0.1 at 2018-11-15 10:00:54 -0600
+Processing by MoviesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Qe9EEAToDCjbe7OkmLq59mMQYrh9QyCnBAZgG+5guoBrlL99hDiFuv+UYD/k3hqhprY4EchwSIQIQ1DzaHWIyA==", "movie"=>"{:title=>\"Casablanca\", :year=>\"1942\", :overview=>\"In Casablanca, Morocco in December 1941, a cynical American expatriate meets a former lover, with unforeseen complications.\", :poster_path=>\"/9UViITBCKeLYWg8Wblbmb9l25mS.jpg\", :tmdb_id=>289}", "commit"=>"Select"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."title" = ? LIMIT ?[0m  [["title", "Casablanca"], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/movies_controller.rb:26
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:26
+  [1m[36mMovie Create (1.1ms)[0m  [1m[32mINSERT INTO "movies" ("title", "year", "overview", "poster_path", "tmdb_id", "created_at", "updated_at", "submitter_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Casablanca"], ["year", "1942"], ["overview", "In Casablanca, Morocco in December 1941, a cynical American expatriate meets a former lover, with unforeseen complications."], ["poster_path", "/9UViITBCKeLYWg8Wblbmb9l25mS.jpg"], ["tmdb_id", "289"], ["created_at", "2018-11-15 16:00:54.511492"], ["updated_at", "2018-11-15 16:00:54.511492"], ["submitter_id", 9]]
+  ↳ app/controllers/movies_controller.rb:26
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/movies_controller.rb:26
+Redirected to http://localhost:3000/movies
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/movies_controller.rb:36
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:36
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 37], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:36
+  [1m[36mVote Load (0.1ms)[0m  [1m[34mSELECT  "votes".* FROM "votes" WHERE "votes"."user_id" = ? AND "votes"."movie_id" = ? LIMIT ?[0m  [["user_id", 9], ["movie_id", 37], ["LIMIT", 1]]
+  ↳ app/models/vote.rb:8
+  [1m[36mVote Create (0.8ms)[0m  [1m[32mINSERT INTO "votes" ("up", "user_id", "movie_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["up", 1], ["user_id", 9], ["movie_id", 37], ["created_at", "2018-11-15 16:00:54.528421"], ["updated_at", "2018-11-15 16:00:54.528421"]]
+  ↳ app/controllers/movies_controller.rb:36
+  [1m[35m (2.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/movies_controller.rb:36
+Completed 302 Found in 30ms (ActiveRecord: 8.3ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2018-11-15 10:00:54 -0600
+Processing by MoviesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/movies/index.html.erb:4
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered movies/index.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 97ms (Views: 89.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/movies/find" for 127.0.0.1 at 2018-11-15 10:01:00 -0600
+Processing by MoviesController#find as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendering movies/find.html.erb within layouts/application
+  Rendered movies/find.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 58ms (Views: 49.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/movies/find?utf8=%E2%9C%93&q=Plan+9&commit=Search" for 127.0.0.1 at 2018-11-15 10:01:05 -0600
+Processing by MoviesController#find as HTML
+  Parameters: {"utf8"=>"✓", "q"=>"Plan 9", "commit"=>"Search"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendering movies/find.html.erb within layouts/application
+  Rendered movies/find.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 301ms (Views: 47.5ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/movies" for 127.0.0.1 at 2018-11-15 10:01:09 -0600
+Processing by MoviesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"g6C0s4ftdQ44DqlMWZXaADJMZtzMxJg/sI6VQTmQRbmp20/eBz38nBzhetcl8XlX9+o8dXn38By8y6Wpv4V38Q==", "movie"=>"{:title=>\"Plan 9 from Outer Space\", :year=>\"1959\", :overview=>\"In California, an old man grieves the loss of his wife and on the next day he also dies. However, the space soldier Eros and her mate Tanna use an electric device to resurrect them both and the strong Inspector Clay that was murdered by the couple. Their intention is not to conquest Earth but to stop mankind from developing the powerful bomb “Solobonite” that would threaten the universe. When the population of Hollywood and Washington DC sees flying saucers on the sky, a colonel, a police lieutenant, a commercial pilot, his wife and a policeman try to stop the aliens.\", :poster_path=>\"/tBkJps1poCnVqWbqNfVLgAbb8br.jpg\", :tmdb_id=>10513}", "commit"=>"Select"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."title" = ? LIMIT ?[0m  [["title", "Plan 9 from Outer Space"], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/movies_controller.rb:26
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:26
+  [1m[36mMovie Create (0.5ms)[0m  [1m[32mINSERT INTO "movies" ("title", "year", "overview", "poster_path", "tmdb_id", "created_at", "updated_at", "submitter_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Plan 9 from Outer Space"], ["year", "1959"], ["overview", "In California, an old man grieves the loss of his wife and on the next day he also dies. However, the space soldier Eros and her mate Tanna use an electric device to resurrect them both and the strong Inspector Clay that was murdered by the couple. Their intention is not to conquest Earth but to stop mankind from developing the powerful bomb “Solobonite” that would threaten the universe. When the population of Hollywood and Washington DC sees flying saucers on the sky, a colonel, a police lieutenant, a commercial pilot, his wife and a policeman try to stop the aliens."], ["poster_path", "/tBkJps1poCnVqWbqNfVLgAbb8br.jpg"], ["tmdb_id", "10513"], ["created_at", "2018-11-15 16:01:09.560746"], ["updated_at", "2018-11-15 16:01:09.560746"], ["submitter_id", 9]]
+  ↳ app/controllers/movies_controller.rb:26
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/movies_controller.rb:26
+Redirected to http://localhost:3000/movies
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/movies_controller.rb:36
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:36
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 38], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:36
+  [1m[36mVote Load (0.1ms)[0m  [1m[34mSELECT  "votes".* FROM "votes" WHERE "votes"."user_id" = ? AND "votes"."movie_id" = ? LIMIT ?[0m  [["user_id", 9], ["movie_id", 38], ["LIMIT", 1]]
+  ↳ app/models/vote.rb:8
+  [1m[36mVote Create (0.9ms)[0m  [1m[32mINSERT INTO "votes" ("up", "user_id", "movie_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["up", 1], ["user_id", 9], ["movie_id", 38], ["created_at", "2018-11-15 16:01:09.576554"], ["updated_at", "2018-11-15 16:01:09.576554"]]
+  ↳ app/controllers/movies_controller.rb:36
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/movies_controller.rb:36
+Completed 302 Found in 28ms (ActiveRecord: 7.5ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2018-11-15 10:01:09 -0600
+Processing by MoviesController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/movies/index.html.erb:4
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered movies/index.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 66ms (Views: 55.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/movies/38" for 127.0.0.1 at 2018-11-15 10:01:12 -0600
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"38"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 38], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:68
+  Rendering movies/show.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:19
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered movies/show.html.erb within layouts/application (325.8ms)
+Completed 200 OK in 399ms (Views: 388.0ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/votes" for 127.0.0.1 at 2018-11-15 10:01:23 -0600
+Processing by VotesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qddIQ3FmbCjktLh0eVeKQKo2e2Ot8JkBmH+hYuFw5SEsLRlYOT1ZpJTYU1NnQlLCZIwJEGW6a6NF94qNvGEUmA==", "vote"=>{"movie_id"=>"38", "user_id"=>"9", "up"=>"false"}, "commit"=>"Vote"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/votes_controller.rb:15
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 38], ["LIMIT", 1]]
+  ↳ app/controllers/votes_controller.rb:15
+  [1m[36mVote Load (0.5ms)[0m  [1m[34mSELECT  "votes".* FROM "votes" WHERE "votes"."user_id" = ? AND "votes"."movie_id" = ? LIMIT ?[0m  [["user_id", 9], ["movie_id", 38], ["LIMIT", 1]]
+  ↳ app/models/vote.rb:8
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/vote.rb:10
+  [1m[36mVote Destroy (0.7ms)[0m  [1m[31mDELETE FROM "votes" WHERE "votes"."id" = ?[0m  [["id", 76]]
+  ↳ app/models/vote.rb:10
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/vote.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/votes_controller.rb:16
+  [1m[36mVote Load (0.2ms)[0m  [1m[34mSELECT  "votes".* FROM "votes" WHERE "votes"."user_id" = ? AND "votes"."movie_id" = ? LIMIT ?[0m  [["user_id", 9], ["movie_id", 38], ["LIMIT", 1]]
+  ↳ app/models/vote.rb:8
+  [1m[36mVote Create (0.6ms)[0m  [1m[32mINSERT INTO "votes" ("up", "user_id", "movie_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["up", 0], ["user_id", 9], ["movie_id", 38], ["created_at", "2018-11-15 16:01:23.032738"], ["updated_at", "2018-11-15 16:01:23.032738"]]
+  ↳ app/controllers/votes_controller.rb:16
+  [1m[35m (3.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/votes_controller.rb:16
+Redirected to http://localhost:3000/movies/38
+Completed 302 Found in 30ms (ActiveRecord: 8.2ms)
+
+
+Started GET "/movies/38" for 127.0.0.1 at 2018-11-15 10:01:23 -0600
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"38"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 38], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:68
+  Rendering movies/show.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:19
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered movies/show.html.erb within layouts/application (189.1ms)
+Completed 200 OK in 255ms (Views: 247.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2018-11-15 10:11:56 -0600
+Processing by MoviesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/movies/index.html.erb:4
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered movies/index.html.erb within layouts/application (14.6ms)
+Completed 200 OK in 82ms (Views: 72.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/votes/tally" for 127.0.0.1 at 2018-11-15 10:11:58 -0600
+Processing by VotesController#tally as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/models/movie.rb:18
+  [1m[36mVote Load (0.5ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."movie_id" = ?[0m  [["movie_id", 35]]
+  ↳ app/models/movie.rb:11
+  [1m[36mVote Load (0.2ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."movie_id" = ?[0m  [["movie_id", 36]]
+  ↳ app/models/movie.rb:11
+  [1m[36mVote Load (0.1ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."movie_id" = ?[0m  [["movie_id", 37]]
+  ↳ app/models/movie.rb:11
+  [1m[36mVote Load (0.1ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."movie_id" = ?[0m  [["movie_id", 38]]
+  ↳ app/models/movie.rb:11
+  Rendering votes/tally.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered votes/tally.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 89ms (Views: 42.0ms | ActiveRecord: 1.5ms)
+
+
+Started DELETE "/votes/destroy_all" for 127.0.0.1 at 2018-11-15 10:12:01 -0600
+Processing by VotesController#destroy_all as HTML
+  Parameters: {"authenticity_token"=>"5reMNfiRwBXyxxRlftjp4IZkeyXnCADq6N8WfCwUgbrMzHdYeEFJh9Yox/4CvEq3Q8IhjFI7aMnkmiaUqgGz8g=="}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mVote Load (0.3ms)[0m  [1m[34mSELECT "votes".* FROM "votes"[0m
+  ↳ app/controllers/votes_controller.rb:44
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/votes_controller.rb:44
+  [1m[36mVote Destroy (0.7ms)[0m  [1m[31mDELETE FROM "votes" WHERE "votes"."id" = ?[0m  [["id", 73]]
+  ↳ app/controllers/votes_controller.rb:44
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/votes_controller.rb:44
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/votes_controller.rb:44
+  [1m[36mVote Destroy (0.7ms)[0m  [1m[31mDELETE FROM "votes" WHERE "votes"."id" = ?[0m  [["id", 74]]
+  ↳ app/controllers/votes_controller.rb:44
+  [1m[35m (3.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/votes_controller.rb:44
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/votes_controller.rb:44
+  [1m[36mVote Destroy (0.7ms)[0m  [1m[31mDELETE FROM "votes" WHERE "votes"."id" = ?[0m  [["id", 75]]
+  ↳ app/controllers/votes_controller.rb:44
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/votes_controller.rb:44
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/votes_controller.rb:44
+  [1m[36mVote Destroy (1.0ms)[0m  [1m[31mDELETE FROM "votes" WHERE "votes"."id" = ?[0m  [["id", 77]]
+  ↳ app/controllers/votes_controller.rb:44
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/votes_controller.rb:44
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/votes_controller.rb:45
+  [1m[36mVote Load (0.4ms)[0m  [1m[34mSELECT  "votes".* FROM "votes" WHERE "votes"."user_id" IS NULL AND "votes"."movie_id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/models/vote.rb:8
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/votes_controller.rb:45
+Redirected to http://localhost:3000/movies
+Completed 302 Found in 40ms (ActiveRecord: 14.6ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2018-11-15 10:12:01 -0600
+Processing by MoviesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/movies/index.html.erb:4
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered movies/index.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 58ms (Views: 51.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/votes/tally" for 127.0.0.1 at 2018-11-15 10:12:04 -0600
+Processing by VotesController#tally as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/models/movie.rb:18
+  [1m[36mVote Load (0.3ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."movie_id" = ?[0m  [["movie_id", 35]]
+  ↳ app/models/movie.rb:11
+  [1m[36mVote Load (0.2ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."movie_id" = ?[0m  [["movie_id", 36]]
+  ↳ app/models/movie.rb:11
+  [1m[36mVote Load (0.3ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."movie_id" = ?[0m  [["movie_id", 37]]
+  ↳ app/models/movie.rb:11
+  [1m[36mVote Load (0.3ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."movie_id" = ?[0m  [["movie_id", 38]]
+  ↳ app/models/movie.rb:11
+  Rendering votes/tally.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered votes/tally.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 63ms (Views: 46.2ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/movies/35" for 127.0.0.1 at 2018-11-15 10:12:11 -0600
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"35"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:68
+  Rendering movies/show.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:19
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered movies/show.html.erb within layouts/application (228.0ms)
+Completed 200 OK in 277ms (Views: 265.7ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/votes" for 127.0.0.1 at 2018-11-15 10:12:13 -0600
+Processing by VotesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3ka6tHWYP0KZZfcmh+Li0BR0WmfxVqKYttieLIlMi61bvOuvPcMKzukJHAGZ9zpS2s4oFDkcUDprULXD1F16FA==", "vote"=>{"movie_id"=>"35", "user_id"=>"9", "up"=>"true"}, "commit"=>"Vote"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/votes_controller.rb:15
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/controllers/votes_controller.rb:15
+  [1m[36mVote Load (0.4ms)[0m  [1m[34mSELECT  "votes".* FROM "votes" WHERE "votes"."user_id" = ? AND "votes"."movie_id" = ? LIMIT ?[0m  [["user_id", 9], ["movie_id", 35], ["LIMIT", 1]]
+  ↳ app/models/vote.rb:8
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/votes_controller.rb:16
+  [1m[36mCACHE Vote Load (0.0ms)[0m  [1m[34mSELECT  "votes".* FROM "votes" WHERE "votes"."user_id" = ? AND "votes"."movie_id" = ? LIMIT ?[0m  [["user_id", 9], ["movie_id", 35], ["LIMIT", 1]]
+  ↳ app/models/vote.rb:8
+  [1m[36mVote Create (0.8ms)[0m  [1m[32mINSERT INTO "votes" ("up", "user_id", "movie_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["up", 1], ["user_id", 9], ["movie_id", 35], ["created_at", "2018-11-15 16:12:13.285270"], ["updated_at", "2018-11-15 16:12:13.285270"]]
+  ↳ app/controllers/votes_controller.rb:16
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/votes_controller.rb:16
+Redirected to http://localhost:3000/movies/35
+Completed 302 Found in 20ms (ActiveRecord: 4.1ms)
+
+
+Started GET "/movies/35" for 127.0.0.1 at 2018-11-15 10:12:13 -0600
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"35"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:68
+  Rendering movies/show.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:19
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered movies/show.html.erb within layouts/application (203.0ms)
+Completed 200 OK in 249ms (Views: 241.9ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/votes" for 127.0.0.1 at 2018-11-15 10:12:17 -0600
+Processing by VotesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2U83gGBGda26Fz/50ZpiRPQTknU3y8jl4u6RcdV10CHzNMzt4Jb8P5747GKt/sETMbXI3IL4oMbuq6GZU2DiaQ==", "vote"=>{"movie_id"=>"35", "user_id"=>"9", "up"=>"true"}, "commit"=>"Vote"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/votes_controller.rb:15
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/controllers/votes_controller.rb:15
+  [1m[36mVote Load (0.1ms)[0m  [1m[34mSELECT  "votes".* FROM "votes" WHERE "votes"."user_id" = ? AND "votes"."movie_id" = ? LIMIT ?[0m  [["user_id", 9], ["movie_id", 35], ["LIMIT", 1]]
+  ↳ app/models/vote.rb:8
+Redirected to http://localhost:3000/movies/35
+Completed 302 Found in 5ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/movies/35" for 127.0.0.1 at 2018-11-15 10:12:17 -0600
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"35"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:68
+  Rendering movies/show.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:19
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered movies/show.html.erb within layouts/application (208.6ms)
+Completed 200 OK in 266ms (Views: 260.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2018-11-15 10:12:19 -0600
+Processing by MoviesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/movies/index.html.erb:4
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered movies/index.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 54ms (Views: 45.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/movies/36" for 127.0.0.1 at 2018-11-15 10:12:21 -0600
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"36"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 36], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:68
+  Rendering movies/show.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:19
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered movies/show.html.erb within layouts/application (217.2ms)
+Completed 200 OK in 273ms (Views: 255.5ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/votes" for 127.0.0.1 at 2018-11-15 10:12:23 -0600
+Processing by VotesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Pde4xqA3Zy3i63JqoFTVeBZj3ncjhKeWPjuemn71QpO4Lend6GxSoZKHmU2+QQ362NmsBOvOVTTjs7V1I+SzKg==", "vote"=>{"movie_id"=>"36", "user_id"=>"9", "up"=>"true"}, "commit"=>"Vote"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/votes_controller.rb:15
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 36], ["LIMIT", 1]]
+  ↳ app/controllers/votes_controller.rb:15
+  [1m[36mVote Load (0.2ms)[0m  [1m[34mSELECT  "votes".* FROM "votes" WHERE "votes"."user_id" = ? AND "votes"."movie_id" = ? LIMIT ?[0m  [["user_id", 9], ["movie_id", 36], ["LIMIT", 1]]
+  ↳ app/models/vote.rb:8
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/votes_controller.rb:16
+  [1m[36mCACHE Vote Load (0.1ms)[0m  [1m[34mSELECT  "votes".* FROM "votes" WHERE "votes"."user_id" = ? AND "votes"."movie_id" = ? LIMIT ?[0m  [["user_id", 9], ["movie_id", 36], ["LIMIT", 1]]
+  ↳ app/models/vote.rb:8
+  [1m[36mVote Create (1.0ms)[0m  [1m[32mINSERT INTO "votes" ("up", "user_id", "movie_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["up", 1], ["user_id", 9], ["movie_id", 36], ["created_at", "2018-11-15 16:12:23.287300"], ["updated_at", "2018-11-15 16:12:23.287300"]]
+  ↳ app/controllers/votes_controller.rb:16
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/votes_controller.rb:16
+Redirected to http://localhost:3000/movies/36
+Completed 302 Found in 18ms (ActiveRecord: 3.9ms)
+
+
+Started GET "/movies/36" for 127.0.0.1 at 2018-11-15 10:12:23 -0600
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"36"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 36], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:68
+  Rendering movies/show.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:19
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered movies/show.html.erb within layouts/application (249.7ms)
+Completed 200 OK in 308ms (Views: 299.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2018-11-15 10:12:25 -0600
+Processing by MoviesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/movies/index.html.erb:4
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered movies/index.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 83ms (Views: 71.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/movies/37" for 127.0.0.1 at 2018-11-15 10:12:26 -0600
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"37"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 37], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:68
+  Rendering movies/show.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:19
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered movies/show.html.erb within layouts/application (223.2ms)
+Completed 200 OK in 275ms (Views: 265.1ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/votes" for 127.0.0.1 at 2018-11-15 10:12:29 -0600
+Processing by VotesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4Qdc2P3qNSQdI72ST+HnSMZI+OdHAIyrLoFFRVMQWGZk/Q3DtbEAqG1PVrVR9D/KCPKKlI9KfgnzCW6qDgGp3w==", "vote"=>{"movie_id"=>"37", "user_id"=>"9", "up"=>"true"}, "commit"=>"Vote"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/votes_controller.rb:15
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 37], ["LIMIT", 1]]
+  ↳ app/controllers/votes_controller.rb:15
+  [1m[36mVote Load (0.2ms)[0m  [1m[34mSELECT  "votes".* FROM "votes" WHERE "votes"."user_id" = ? AND "votes"."movie_id" = ? LIMIT ?[0m  [["user_id", 9], ["movie_id", 37], ["LIMIT", 1]]
+  ↳ app/models/vote.rb:8
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/votes_controller.rb:16
+  [1m[36mCACHE Vote Load (0.0ms)[0m  [1m[34mSELECT  "votes".* FROM "votes" WHERE "votes"."user_id" = ? AND "votes"."movie_id" = ? LIMIT ?[0m  [["user_id", 9], ["movie_id", 37], ["LIMIT", 1]]
+  ↳ app/models/vote.rb:8
+  [1m[36mVote Create (2.2ms)[0m  [1m[32mINSERT INTO "votes" ("up", "user_id", "movie_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["up", 1], ["user_id", 9], ["movie_id", 37], ["created_at", "2018-11-15 16:12:29.625745"], ["updated_at", "2018-11-15 16:12:29.625745"]]
+  ↳ app/controllers/votes_controller.rb:16
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/votes_controller.rb:16
+Redirected to http://localhost:3000/movies/37
+Completed 302 Found in 21ms (ActiveRecord: 5.0ms)
+
+
+Started GET "/movies/37" for 127.0.0.1 at 2018-11-15 10:12:29 -0600
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"37"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 37], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:68
+  Rendering movies/show.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:19
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered movies/show.html.erb within layouts/application (227.8ms)
+Completed 200 OK in 294ms (Views: 270.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2018-11-15 10:12:33 -0600
+Processing by MoviesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/movies/index.html.erb:4
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered movies/index.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 58ms (Views: 50.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/movies/38" for 127.0.0.1 at 2018-11-15 10:12:34 -0600
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"38"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 38], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:68
+  Rendering movies/show.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:19
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered movies/show.html.erb within layouts/application (253.4ms)
+Completed 200 OK in 321ms (Views: 308.5ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/votes" for 127.0.0.1 at 2018-11-15 10:12:36 -0600
+Processing by VotesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bAMkObTh6S97qE1PAhLg7LsD5ox7/YRl+YA7T+6H8gXp+XUi/LrcowvEpmgcBzhudbmU/7O3dsckCBCgs5YDvA==", "vote"=>{"movie_id"=>"38", "user_id"=>"9", "up"=>"false"}, "commit"=>"Vote"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/votes_controller.rb:15
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 38], ["LIMIT", 1]]
+  ↳ app/controllers/votes_controller.rb:15
+  [1m[36mVote Load (0.2ms)[0m  [1m[34mSELECT  "votes".* FROM "votes" WHERE "votes"."user_id" = ? AND "votes"."movie_id" = ? LIMIT ?[0m  [["user_id", 9], ["movie_id", 38], ["LIMIT", 1]]
+  ↳ app/models/vote.rb:8
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/votes_controller.rb:16
+  [1m[36mCACHE Vote Load (0.1ms)[0m  [1m[34mSELECT  "votes".* FROM "votes" WHERE "votes"."user_id" = ? AND "votes"."movie_id" = ? LIMIT ?[0m  [["user_id", 9], ["movie_id", 38], ["LIMIT", 1]]
+  ↳ app/models/vote.rb:8
+  [1m[36mVote Create (0.9ms)[0m  [1m[32mINSERT INTO "votes" ("up", "user_id", "movie_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["up", 0], ["user_id", 9], ["movie_id", 38], ["created_at", "2018-11-15 16:12:36.660398"], ["updated_at", "2018-11-15 16:12:36.660398"]]
+  ↳ app/controllers/votes_controller.rb:16
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/votes_controller.rb:16
+Redirected to http://localhost:3000/movies/38
+Completed 302 Found in 20ms (ActiveRecord: 4.1ms)
+
+
+Started GET "/movies/38" for 127.0.0.1 at 2018-11-15 10:12:36 -0600
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"38"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 38], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:68
+  Rendering movies/show.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:19
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered movies/show.html.erb within layouts/application (233.0ms)
+Completed 200 OK in 299ms (Views: 285.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2018-11-15 10:12:40 -0600
+Processing by MoviesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/movies/index.html.erb:4
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered movies/index.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 68ms (Views: 59.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/votes/tally" for 127.0.0.1 at 2018-11-15 10:15:51 -0600
+Processing by VotesController#tally as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/models/movie.rb:18
+  [1m[36mVote Load (2.2ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."movie_id" = ?[0m  [["movie_id", 35]]
+  ↳ app/models/movie.rb:11
+  [1m[36mVote Load (0.2ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."movie_id" = ?[0m  [["movie_id", 36]]
+  ↳ app/models/movie.rb:11
+  [1m[36mVote Load (0.1ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."movie_id" = ?[0m  [["movie_id", 37]]
+  ↳ app/models/movie.rb:11
+  [1m[36mVote Load (0.3ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."movie_id" = ?[0m  [["movie_id", 38]]
+  ↳ app/models/movie.rb:11
+  Rendering votes/tally.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered votes/tally.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 132ms (Views: 105.7ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/votes/tally" for 127.0.0.1 at 2018-11-15 10:15:51 -0600
+Processing by VotesController#tally as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mMovie Load (0.6ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/models/movie.rb:18
+  [1m[36mVote Load (0.2ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."movie_id" = ?[0m  [["movie_id", 35]]
+  ↳ app/models/movie.rb:11
+  [1m[36mVote Load (0.2ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."movie_id" = ?[0m  [["movie_id", 36]]
+  ↳ app/models/movie.rb:11
+  [1m[36mVote Load (0.4ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."movie_id" = ?[0m  [["movie_id", 37]]
+  ↳ app/models/movie.rb:11
+  [1m[36mVote Load (0.2ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."movie_id" = ?[0m  [["movie_id", 38]]
+  ↳ app/models/movie.rb:11
+  Rendering votes/tally.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered votes/tally.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 124ms (Views: 108.1ms | ActiveRecord: 1.6ms)
+
+
+Started DELETE "/votes/destroy_all" for 127.0.0.1 at 2018-11-15 10:17:02 -0600
+Processing by VotesController#destroy_all as HTML
+  Parameters: {"authenticity_token"=>"qJDa7CDotG1O8g6w9ZOgfkY6eo8FN0zcHXZ4Rl97XK6C6yGBoDg9/2od3SuJ9wMpg5wgJrAEJP8RM0iu2W5u5g=="}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mVote Load (0.2ms)[0m  [1m[34mSELECT "votes".* FROM "votes"[0m
+  ↳ app/controllers/votes_controller.rb:44
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/votes_controller.rb:44
+  [1m[36mVote Destroy (1.2ms)[0m  [1m[31mDELETE FROM "votes" WHERE "votes"."id" = ?[0m  [["id", 78]]
+  ↳ app/controllers/votes_controller.rb:44
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/votes_controller.rb:44
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/votes_controller.rb:44
+  [1m[36mVote Destroy (0.5ms)[0m  [1m[31mDELETE FROM "votes" WHERE "votes"."id" = ?[0m  [["id", 79]]
+  ↳ app/controllers/votes_controller.rb:44
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/votes_controller.rb:44
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/votes_controller.rb:44
+  [1m[36mVote Destroy (0.4ms)[0m  [1m[31mDELETE FROM "votes" WHERE "votes"."id" = ?[0m  [["id", 80]]
+  ↳ app/controllers/votes_controller.rb:44
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/votes_controller.rb:44
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/votes_controller.rb:44
+  [1m[36mVote Destroy (0.6ms)[0m  [1m[31mDELETE FROM "votes" WHERE "votes"."id" = ?[0m  [["id", 81]]
+  ↳ app/controllers/votes_controller.rb:44
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/votes_controller.rb:44
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/votes_controller.rb:45
+  [1m[36mVote Load (0.4ms)[0m  [1m[34mSELECT  "votes".* FROM "votes" WHERE "votes"."user_id" IS NULL AND "votes"."movie_id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/models/vote.rb:8
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/votes_controller.rb:45
+Redirected to http://localhost:3000/movies
+Completed 302 Found in 29ms (ActiveRecord: 12.0ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2018-11-15 10:17:02 -0600
+Processing by MoviesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/movies/index.html.erb:4
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered movies/index.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 81ms (Views: 74.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/votes/tally" for 127.0.0.1 at 2018-11-15 10:17:06 -0600
+Processing by VotesController#tally as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mMovie Load (2.0ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/models/movie.rb:18
+  [1m[36mVote Load (0.2ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."movie_id" = ?[0m  [["movie_id", 35]]
+  ↳ app/models/movie.rb:11
+  [1m[36mVote Load (0.2ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."movie_id" = ?[0m  [["movie_id", 36]]
+  ↳ app/models/movie.rb:11
+  [1m[36mVote Load (0.2ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."movie_id" = ?[0m  [["movie_id", 37]]
+  ↳ app/models/movie.rb:11
+  [1m[36mVote Load (0.2ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."movie_id" = ?[0m  [["movie_id", 38]]
+  ↳ app/models/movie.rb:11
+  Rendering votes/tally.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered votes/tally.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 63ms (Views: 45.0ms | ActiveRecord: 3.0ms)
+
+
+Started DELETE "/votes/destroy_all" for 127.0.0.1 at 2018-11-15 10:18:51 -0600
+Processing by VotesController#destroy_all as HTML
+  Parameters: {"authenticity_token"=>"5nedYRj6Jlt4jSYs9QsXiPM2YrmwPnNSBIUAlf4T4aDMDGYMmCqvyVxi9beJb7TfNpA4EAUNG3EIwDB9eAbT6A=="}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mVote Load (0.2ms)[0m  [1m[34mSELECT "votes".* FROM "votes"[0m
+  ↳ app/controllers/votes_controller.rb:44
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/votes_controller.rb:45
+  [1m[36mVote Load (0.2ms)[0m  [1m[34mSELECT  "votes".* FROM "votes" WHERE "votes"."user_id" IS NULL AND "votes"."movie_id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/models/vote.rb:8
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/votes_controller.rb:45
+Redirected to http://localhost:3000/movies
+Completed 302 Found in 16ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2018-11-15 10:18:51 -0600
+Processing by MoviesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/movies/index.html.erb:4
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered movies/index.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 75ms (Views: 69.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/votes/tally" for 127.0.0.1 at 2018-11-15 10:18:54 -0600
+Processing by VotesController#tally as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mMovie Load (2.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/models/movie.rb:18
+  [1m[36mVote Load (0.2ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."movie_id" = ?[0m  [["movie_id", 35]]
+  ↳ app/models/movie.rb:11
+  [1m[36mVote Load (0.2ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."movie_id" = ?[0m  [["movie_id", 36]]
+  ↳ app/models/movie.rb:11
+  [1m[36mVote Load (1.5ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."movie_id" = ?[0m  [["movie_id", 37]]
+  ↳ app/models/movie.rb:11
+  [1m[36mVote Load (0.3ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."movie_id" = ?[0m  [["movie_id", 38]]
+  ↳ app/models/movie.rb:11
+  Rendering votes/tally.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered votes/tally.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 72ms (Views: 52.6ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/votes/tally" for 127.0.0.1 at 2018-11-15 10:20:25 -0600
+Processing by VotesController#tally as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/models/movie.rb:18
+  [1m[36mVote Load (0.1ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."movie_id" = ?[0m  [["movie_id", 35]]
+  ↳ app/models/movie.rb:11
+  [1m[36mVote Load (0.2ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."movie_id" = ?[0m  [["movie_id", 36]]
+  ↳ app/models/movie.rb:11
+  [1m[36mVote Load (0.1ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."movie_id" = ?[0m  [["movie_id", 37]]
+  ↳ app/models/movie.rb:11
+  [1m[36mVote Load (0.1ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."movie_id" = ?[0m  [["movie_id", 38]]
+  ↳ app/models/movie.rb:11
+  Rendering votes/tally.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered votes/tally.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 55ms (Views: 42.7ms | ActiveRecord: 1.0ms)
+
+
+Started DELETE "/votes/destroy_all" for 127.0.0.1 at 2018-11-15 10:20:29 -0600
+Processing by VotesController#destroy_all as HTML
+  Parameters: {"authenticity_token"=>"XiDVB7J2HQFYvZX7Fstn8WcDikC+SXWmGEqaZ9Gg0ap0Wy5qMqaUk3xSRmBqr8SmoqXQ6Qt6HYUUD6qPV7Xj4g=="}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mVote Load (0.2ms)[0m  [1m[34mSELECT "votes".* FROM "votes"[0m
+  ↳ app/controllers/votes_controller.rb:44
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/votes_controller.rb:45
+  [1m[36mVote Load (0.2ms)[0m  [1m[34mSELECT  "votes".* FROM "votes" WHERE "votes"."user_id" IS NULL AND "votes"."movie_id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/models/vote.rb:8
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/votes_controller.rb:45
+Redirected to http://localhost:3000/movies
+Completed 302 Found in 10ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2018-11-15 10:20:29 -0600
+Processing by MoviesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/movies/index.html.erb:4
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered movies/index.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 89ms (Views: 84.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2018-11-15 10:20:54 -0600
+Processing by MoviesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/movies/index.html.erb:4
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered movies/index.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 64ms (Views: 57.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/votes/tally" for 127.0.0.1 at 2018-11-15 10:20:55 -0600
+Processing by VotesController#tally as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/models/movie.rb:18
+  [1m[36mVote Load (0.2ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."movie_id" = ?[0m  [["movie_id", 35]]
+  ↳ app/models/movie.rb:11
+  [1m[36mVote Load (0.2ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."movie_id" = ?[0m  [["movie_id", 36]]
+  ↳ app/models/movie.rb:11
+  [1m[36mVote Load (0.4ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."movie_id" = ?[0m  [["movie_id", 37]]
+  ↳ app/models/movie.rb:11
+  [1m[36mVote Load (0.2ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."movie_id" = ?[0m  [["movie_id", 38]]
+  ↳ app/models/movie.rb:11
+  Rendering votes/tally.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered votes/tally.html.erb within layouts/application (16.9ms)
+Completed 200 OK in 99ms (Views: 73.9ms | ActiveRecord: 1.7ms)
+
+

@@ -16,4 +16,10 @@ class ApplicationController < ActionController::Base
     def define_error_message
         @error_message = flash[:error_message]
     end
+
+    def logged_in?
+      if !session[:current_user_id] 
+        redirect_to "/login"
+      end
+    end
 end

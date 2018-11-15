@@ -1,5 +1,6 @@
 class MoviesController < ApplicationController
     before_action :define_current_movie
+    before_action :logged_in?
     
     def new
         @users = User.all

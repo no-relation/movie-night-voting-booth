@@ -10,10 +10,26 @@ class VotesController < ApplicationController
         @movies = Movie.sorted_by_vote
     end
 
+    # def create
+    #     Vote.create(vote_params)
+    #     redirect_to movie_path(Vote.last.movie)
+    #     flash[:notice] = "Movie upvoted"
+    # end
+
     def create
-        Vote.create(vote_params)
-        redirect_to movie_path(Vote.last.movie)
-        flash[:notice] = "Movie upvoted"
+        @vote = Vote.new(vote_params)
+        if @vote.valid?
+            @vote.save
+            if @vote.up
+                flash[:info] = "Movie upvoted"
+            else
+                flash[:danger] = "Movie downvoted"
+            end
+            redirect_to movie_path(@vote.movie)
+        else
+            redirect_to movie_path(@vote.movie)
+            flash[:dark] = "You already voted on this"
+        end
     end
     
     def index

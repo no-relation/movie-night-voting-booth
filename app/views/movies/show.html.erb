@@ -9,7 +9,7 @@
     <%= form.radio_button(:up, false) %>
     <%= form.label 'Downvote'%>
     <br>
-    <%= form.submit value="Vote"%>
+    <%= form.submit value="Vote", class: "btn btn-primary"%>
 <% end %>
 <br>
 <%= image_tag "#{@movie.poster_image}" %>

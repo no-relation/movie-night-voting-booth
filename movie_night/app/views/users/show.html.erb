@@ -11,6 +11,6 @@
 
 <div class='delete'>
 <% if can? :destroy, User%>
-<%= button_to "delete", {:controller => :users, :id => @user.id, :action => 'destroy' }, :method => :delete %>
+<%= button_to "Delete User", {:controller => :users, :id => @user.id, :action => 'destroy' }, :method => :delete, class: "btn btn-danger" %>
 <% end %>
 </div>

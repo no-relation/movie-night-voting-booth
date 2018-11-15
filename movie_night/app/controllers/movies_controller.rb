@@ -55,6 +55,11 @@ class MoviesController < ApplicationController
         redirect_to movies_path
     end
 
+    def destroy_all
+        Movie.destroy_all
+        redirect_to find_movies_path
+    end
+
     private
     
     def define_current_movie

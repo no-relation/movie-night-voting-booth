@@ -1,7 +1,7 @@
 class Movie < ApplicationRecord
     extend ApiCommunicator
 
-    has_many :votes
+    has_many :votes, dependent: :destroy
     has_many :users, through: :votes
     belongs_to :submitter, class_name: "User"
     accepts_nested_attributes_for :votes

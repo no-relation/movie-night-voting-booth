@@ -40,12 +40,18 @@ class VotesController < ApplicationController
         redirect_to votes_path
     end
 
+    def destroy_all
+        Vote.destroy_all
+        Vote.create
+        redirect_to movies_path
+    end
+
 
 
     private
     
     def define_current_vote
-        if params[:id]
+        if params[:id].is_a?(Integer)
             @vote = Vote.find(params[:id])
         else
             @vote = Vote.new

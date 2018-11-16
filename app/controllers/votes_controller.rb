@@ -12,9 +12,9 @@ class VotesController < ApplicationController
     end
 
     def create
-        if params[:commit] == "upvote"
+        if params[:"commit"] == "upvote"
             params[:vote][:up] = true
-        elsif params[:commit] == "downvote"
+        elsif params[:"commit"] == "downvote"
             params[:vote][:up] = false
         end
         

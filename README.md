@@ -1,6 +1,10 @@
 # Movie Night Voting Booth
 Imagine you and a group of friends want to gather for a movie night. You could talk over what you want to watch for hours, and that can be fun, but what if there was another way?
 
+<a href='https://www.youtube.com/watch?v=IW968KKUFVg' target=_blank><img src='https://media.giphy.com/media/407ExqfEGikpJj1IQK/giphy.gif' 
+alt="video demonstration" width="500" border="10" /></a>
+###### *click for full demo video*
+
 **Movie Night Voting Booth** allows a group of users to nominate films to watch and then vote on them. A user can submit as many movies as they like, and up- or downvote any movie that's been submitted. When the votes are in, click the tally link, and you see how many net votes each movie received.
 
 Movie Night Voting Booth is powered by [The Movie Database API.](https://www.themoviedb.org/?language=en-US) Community built since 2008, the Movie Database has information in 39 languages on over 424,000 movies and 1.4 million episodes of television, and hosts over 2 million photos, posters and other images.
@@ -10,10 +14,6 @@ This webapp also would not have been possible without [Bootstrap](https://getboo
 A visitor can sign up as a user or admin; users have the authorization to add as many movies as they wish, and can either upvote or downvote any movie submitted. A movie can only have one vote per user, either up or down; a user can change their vote, but not upvote or downvote more than once.
 
 Admins can remove movies or other users. They can also reset the vote count or remove all movies from the tallied vote page.
-
-<a href='YOUTUBE LINK GOES HERE' target=_blank><img src='GIPHY GIF GOES HERE' 
-alt="video demonstration" width="500" border="10" /></a>
-###### *click for full demo video*
 
 [Up Arrow and Down Arrow designed by Digital Pharm](http://icongal.com/gallery/iconset/540/must_have/2) and used under [Creative Commons Attribute Non-Commercial license](https://creativecommons.org/licenses/by-nd/3.0/)
 
